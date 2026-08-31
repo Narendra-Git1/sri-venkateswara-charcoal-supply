@@ -2,12 +2,12 @@ import { useState } from "react"
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "#products" },
-  { label: "About Us", href: "#about" },
-  { label: "Wholesale & Retail", href: "#wholesale" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Products", href: "/products" },
+  { label: "About Us", href: "/about" },
+  { label: "Wholesale & Retail", href: "/wholesale-retail" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ]
 
 function Navbar() {
@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        
+
         {/* Brand */}
         <a
           href="/"
