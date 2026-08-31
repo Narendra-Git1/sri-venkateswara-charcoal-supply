@@ -1,9 +1,17 @@
 import ContactActions from "../../components/contact/ContactActions"
+import WhyChooseUs from "../../components/common/WhyChooseUs"
+import ProductsSection from "../../components/products/ProductsSection"
+import WholesaleSection from "../../components/wholesale/WholesaleSection"
+import GallerySection from "../../components/gallery/GallerySection"
+import FAQSection from "../../components/faq/FAQSection"
+import ContactSection from "../../components/contact/ContactSection"
+import About from "../About/About"
+
 
 function Home() {
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-neutral-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
@@ -28,6 +36,22 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <WhyChooseUs />
+
+      <About />
+
+      <ProductsSection />
+
+      <WholesaleSection />
+
+      <GallerySection />
+
+      <FAQSection />
+
+      <ContactSection />
+
     </div>
   )
 }
