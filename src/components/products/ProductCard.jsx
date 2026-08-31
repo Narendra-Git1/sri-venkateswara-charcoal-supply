@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
+
 function ProductCard({ product }) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      
+
       {/* Product Image */}
       <div className="aspect-[4/3] overflow-hidden bg-neutral-100">
         <img
@@ -22,15 +24,15 @@ function ProductCard({ product }) {
         </p>
 
         <div className="mt-5">
-          <a
-            href={`/products/${product.id}`}
+          <Link
+            to={`/products/${product.id}`}
             className="inline-flex items-center text-sm font-semibold text-neutral-900 transition hover:text-neutral-600"
           >
             View Product
             <span className="ml-2" aria-hidden="true">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </article>
