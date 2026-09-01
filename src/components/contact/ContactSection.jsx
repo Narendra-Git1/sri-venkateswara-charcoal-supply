@@ -1,4 +1,6 @@
 import SectionHeading from "../common/SectionHeading"
+import ContactActions from "./ContactActions"
+import { business } from "../../data/business"
 
 function ContactSection() {
   return (
@@ -16,9 +18,9 @@ function ContactSection() {
 
           {/* Contact Information */}
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 sm:p-10">
-            <h3 className="text-2xl font-bold text-neutral-950">
+            <h2 className="text-2xl font-bold text-neutral-950">
               Get in Touch
-            </h3>
+            </h2>
 
             <p className="mt-4 leading-7 text-neutral-600">
               Tell us what type of charcoal you need and the required
@@ -31,26 +33,37 @@ function ContactSection() {
                 <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
                   Phone
                 </p>
-                <p className="mt-1 text-lg font-medium text-neutral-950">
-                  To be confirmed
-                </p>
+
+                <a
+                  href={`tel:${business.phone}`}
+                  className="mt-1 block text-lg font-medium text-neutral-950 hover:underline"
+                >
+                  {business.phone}
+                </a>
               </div>
 
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
                   WhatsApp
                 </p>
-                <p className="mt-1 text-lg font-medium text-neutral-950">
-                  To be confirmed
-                </p>
+
+                <a
+                  href={`https://wa.me/${business.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 block text-lg font-medium text-neutral-950 hover:underline"
+                >
+                  {business.whatsapp}
+                </a>
               </div>
 
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
                   Location
                 </p>
+
                 <p className="mt-1 text-lg font-medium text-neutral-950">
-                  To be confirmed
+                  {business.address}
                 </p>
               </div>
 
@@ -58,19 +71,25 @@ function ContactSection() {
                 <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
                   Business Hours
                 </p>
+
                 <p className="mt-1 text-lg font-medium text-neutral-950">
-                  To be confirmed
+                  {business.businessHours}
                 </p>
               </div>
 
+            </div>
+
+            {/* Contact Actions */}
+            <div className="mt-8">
+              <ContactActions />
             </div>
           </div>
 
           {/* Enquiry Form */}
           <div className="rounded-2xl bg-neutral-950 p-8 text-white sm:p-10">
-            <h3 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold">
               Send an Enquiry
-            </h3>
+            </h2>
 
             <p className="mt-4 text-neutral-300">
               Share your requirement and we can discuss the suitable supply
@@ -89,8 +108,10 @@ function ContactSection() {
 
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="Your name"
+                  required
                   className="w-full rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white outline-none placeholder:text-neutral-500 focus:border-white"
                 />
               </div>
@@ -105,8 +126,10 @@ function ContactSection() {
 
                 <input
                   id="phone"
+                  name="phone"
                   type="tel"
                   placeholder="Your phone number"
+                  required
                   className="w-full rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white outline-none placeholder:text-neutral-500 focus:border-white"
                 />
               </div>
@@ -121,8 +144,10 @@ function ContactSection() {
 
                 <textarea
                   id="requirement"
+                  name="requirement"
                   rows="5"
                   placeholder="Tell us what charcoal you need and the quantity..."
+                  required
                   className="w-full resize-none rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white outline-none placeholder:text-neutral-500 focus:border-white"
                 />
               </div>
