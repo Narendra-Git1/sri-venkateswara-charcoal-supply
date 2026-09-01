@@ -10,7 +10,7 @@ import About from "../About/About"
 
 function Home() {
   return (
-    <div>
+    <main>
       {/* Hero */}
       <section className="relative overflow-hidden bg-neutral-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
@@ -52,7 +52,7 @@ function Home() {
 
       <ContactSection />
 
-    </div>
+     </main>
   )
 }
 
