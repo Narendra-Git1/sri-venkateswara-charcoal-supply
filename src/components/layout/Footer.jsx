@@ -267,7 +267,7 @@ function Footer() {
                 {/* Instagram */}
 
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/sri_venkateswara_charcoal/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -299,7 +299,7 @@ function Footer() {
                 {/* Facebook */}
 
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/nagamani.navya.1"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
