@@ -9,9 +9,11 @@ import Gallery from "../pages/Gallery/Gallery"
 import FAQ from "../pages/FAQ/FAQ"
 import Contact from "../pages/Contact/Contact"
 
+
 function AppRoutes() {
   return (
     <Routes>
+      
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
       <Route
