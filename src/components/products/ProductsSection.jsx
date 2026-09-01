@@ -31,6 +31,8 @@ function ProductsSection() {
           rounded-full
           bg-amber-500/5
           blur-3xl
+          animate-[productGlow_9s_ease-in-out_infinite]
+          motion-reduce:animate-none
         "
       />
 
@@ -45,6 +47,8 @@ function ProductsSection() {
           rounded-full
           bg-neutral-900/5
           blur-3xl
+          animate-[productGlowReverse_11s_ease-in-out_infinite]
+          motion-reduce:animate-none
         "
       />
 
@@ -69,13 +73,31 @@ function ProductsSection() {
             SECTION HEADER
         ========================================================== */}
 
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          className="
+            mx-auto
+            max-w-3xl
+            text-center
+            animate-[fadeInUp_0.8s_ease-out]
+            motion-reduce:animate-none
+          "
+        >
 
           {/* Eyebrow */}
 
           <div className="mb-4 flex items-center justify-center gap-3">
 
-            <span className="h-px w-8 bg-amber-500 sm:w-10" />
+            <span
+              className="
+                h-px
+                w-8
+                origin-right
+                bg-amber-500
+                animate-[scaleLine_0.7s_ease-out]
+                sm:w-10
+                motion-reduce:animate-none
+              "
+            />
 
             <span
               className="
@@ -89,7 +111,17 @@ function ProductsSection() {
               Our Products
             </span>
 
-            <span className="h-px w-8 bg-amber-500 sm:w-10" />
+            <span
+              className="
+                h-px
+                w-8
+                origin-left
+                bg-amber-500
+                animate-[scaleLine_0.7s_ease-out]
+                sm:w-10
+                motion-reduce:animate-none
+              "
+            />
 
           </div>
 
@@ -109,7 +141,14 @@ function ProductsSection() {
           >
             Charcoal Products
 
-            <span className="block text-amber-500">
+            <span
+              className="
+                block
+                text-amber-500
+                animate-[titleReveal_0.8s_ease-out_0.2s_both]
+                motion-reduce:animate-none
+              "
+            >
               for Every Requirement
             </span>
           </h2>
@@ -125,6 +164,8 @@ function ProductsSection() {
               text-sm
               leading-6
               text-neutral-600
+              animate-[fadeInUp_0.8s_ease-out_0.3s_both]
+              motion-reduce:animate-none
               sm:text-base
               sm:leading-7
             "
@@ -152,13 +193,41 @@ function ProductsSection() {
           "
         >
 
-          {products.map((product) => (
+          {products.map((product, index) => (
+
             <div
               key={product.id}
-              className="flex h-full"
+              className="
+                group/product
+                flex
+                h-full
+                opacity-0
+                animate-[productCardIn_0.7s_ease-out_both]
+                motion-reduce:animate-none
+              "
+              style={{
+                animationDelay: `${0.25 + index * 0.12}s`,
+              }}
             >
-              <ProductCard product={product} />
+
+              <div
+                className="
+                  flex
+                  h-full
+                  w-full
+                  transition-all
+                  duration-500
+                  ease-out
+                  group-hover/product:-translate-y-2
+                  group-hover/product:scale-[1.01]
+                  motion-reduce:transition-none
+                "
+              >
+                <ProductCard product={product} />
+              </div>
+
             </div>
+
           ))}
 
         </div>
@@ -177,10 +246,16 @@ function ProductsSection() {
             border-neutral-200
             bg-white
             shadow-sm
+            opacity-0
+            animate-[fadeInUp_0.8s_ease-out_0.75s_both]
             transition-all
-            duration-300
-            hover:border-neutral-300
-            hover:shadow-md
+            duration-500
+            hover:-translate-y-1
+            hover:border-amber-300/60
+            hover:shadow-lg
+            hover:shadow-neutral-900/5
+            motion-reduce:animate-none
+            motion-reduce:transition-none
           "
         >
 
@@ -212,6 +287,9 @@ function ProductsSection() {
                     shrink-0
                     rounded-full
                     bg-amber-500
+                    transition-all
+                    duration-500
+                    hover:h-12
                   "
                 />
 
@@ -273,6 +351,7 @@ function ProductsSection() {
                 duration-300
 
                 hover:bg-amber-500
+                hover:text-neutral-950
 
                 md:border-l
                 md:border-t-0
@@ -288,9 +367,10 @@ function ProductsSection() {
                 aria-hidden="true"
                 className="
                   text-base
-                  transition-transform
+                  transition-all
                   duration-300
                   group-hover:translate-x-1
+                  group-hover:scale-110
                 "
               >
                 →
@@ -314,10 +394,23 @@ function ProductsSection() {
             items-center
             justify-center
             gap-3
+            opacity-0
+            animate-[fadeInUp_0.7s_ease-out_0.95s_both]
+            motion-reduce:animate-none
           "
         >
 
-          <span className="h-px w-8 bg-neutral-200 sm:w-12" />
+          <span
+            className="
+              h-px
+              w-8
+              bg-neutral-200
+              transition-all
+              duration-500
+              hover:w-14
+              sm:w-12
+            "
+          />
 
           <p
             className="
@@ -345,11 +438,145 @@ function ProductsSection() {
             Wholesale & Retail
           </p>
 
-          <span className="h-px w-8 bg-neutral-200 sm:w-12" />
+          <span
+            className="
+              h-px
+              w-8
+              bg-neutral-200
+              transition-all
+              duration-500
+              hover:w-14
+              sm:w-12
+            "
+          />
 
         </div>
 
       </div>
+
+
+      {/* =========================================================
+          PROFESSIONAL ANIMATION KEYFRAMES
+      ========================================================== */}
+
+      <style>{`
+
+        /* ---------------------------------------------
+           Section entrance
+        --------------------------------------------- */
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+
+        /* ---------------------------------------------
+           Product card entrance
+        --------------------------------------------- */
+
+        @keyframes productCardIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.97);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+
+        /* ---------------------------------------------
+           Heading reveal
+        --------------------------------------------- */
+
+        @keyframes titleReveal {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+
+        /* ---------------------------------------------
+           Decorative line
+        --------------------------------------------- */
+
+        @keyframes scaleLine {
+          from {
+            transform: scaleX(0);
+          }
+
+          to {
+            transform: scaleX(1);
+          }
+        }
+
+
+        /* ---------------------------------------------
+           Background glow
+        --------------------------------------------- */
+
+        @keyframes productGlow {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.7;
+          }
+
+          50% {
+            transform: translate(-25px, 20px) scale(1.08);
+            opacity: 1;
+          }
+        }
+
+
+        @keyframes productGlowReverse {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.6;
+          }
+
+          50% {
+            transform: translate(25px, -20px) scale(1.08);
+            opacity: 0.9;
+          }
+        }
+
+
+        /* ---------------------------------------------
+           Reduced motion accessibility
+        --------------------------------------------- */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+
+        }
+
+      `}</style>
 
     </section>
   )
