@@ -17,7 +17,7 @@ function ProductCard({ product }) {
         transition-all
         duration-300
         hover:-translate-y-1.5
-        hover:border-amber-300
+        hover:border-amber-200
         hover:shadow-xl
         hover:shadow-neutral-900/10
       "
@@ -140,7 +140,7 @@ function ProductCard({ product }) {
             text-neutral-950
             transition-colors
             duration-300
-            group-hover:text-amber-600
+            group-hover:text-amber-700
             sm:text-xl
           "
         >
@@ -176,21 +176,22 @@ function ProductCard({ product }) {
               gap-2
               rounded-xl
               border
-              border-amber-500
-              bg-amber-500
+              border-amber-200
+              bg-amber-50
               px-4
               py-3
               text-sm
               font-bold
-              text-neutral-950
+              text-amber-800
               shadow-sm
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:bg-amber-400
-              hover:border-amber-400
+              hover:border-amber-300
+              hover:bg-amber-100
+              hover:text-amber-900
               hover:shadow-md
-              hover:shadow-amber-500/20
+              hover:shadow-amber-500/10
               active:translate-y-0
               sm:w-auto
               sm:justify-start
