@@ -2,7 +2,119 @@ import SectionHeading from "../../components/common/SectionHeading"
 import ContactActions from "../../components/contact/ContactActions"
 import { business } from "../../data/business"
 
+// =========================================================
+// ICONS
+// =========================================================
+
+function PhoneIcon() {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className="h-5 w-5"
+            aria-hidden="true"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6.6 3.5h2.1c.5 0 .9.3 1 .8l.8 3.2c.1.4 0 .8-.3 1.1L8.8 10c1 2.1 2.7 3.8 4.8 4.8l1.4-1.4c.3-.3.7-.4 1.1-.3l3.2.8c.5.1.8.5.8 1v2.1c0 .6-.4 1-1 1C11.2 18 6 12.8 6 5.5c0-.6.4-1 1-1Z"
+            />
+        </svg>
+    )
+}
+
+function WhatsAppIcon() {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className="h-5 w-5"
+            aria-hidden="true"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"
+            />
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.8 8.2c.2-.2.5-.2.7 0l.8 1c.2.2.2.5 0 .8l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.6-.2.8 0l1 .8c.2.2.2.5 0 .7l-.4.5c-.4.5-1 .7-1.6.5-2.8-.9-5-3.1-5.9-5.9-.2-.6 0-1.2.5-1.6l.4-.5Z"
+            />
+        </svg>
+    )
+}
+
+function LocationIcon() {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className="h-5 w-5"
+            aria-hidden="true"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M20 10.5c0 5.2-8 10-8 10s-8-4.8-8-10a8 8 0 1 1 16 0Z"
+            />
+            <circle cx="12" cy="10.5" r="2.5" />
+        </svg>
+    )
+}
+
+function ClockIcon() {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className="h-5 w-5"
+            aria-hidden="true"
+        >
+            <circle cx="12" cy="12" r="8.5" />
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 7.5v5l3.2 2"
+            />
+        </svg>
+    )
+}
+
+function ArrowIcon({ className = "h-4 w-4" }) {
+    return (
+        <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className={className}
+            aria-hidden="true"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 10h11M10.5 5.5 15 10l-4.5 4.5"
+            />
+        </svg>
+    )
+}
+
+// =========================================================
+// CONTACT PAGE
+// =========================================================
+
 function Contact() {
+    const whatsappNumber = String(business.whatsapp || "").replace(/\D/g, "")
+
     return (
         <main className="bg-neutral-50">
 
@@ -229,7 +341,6 @@ function Contact() {
                                         justify-center
                                         rounded-xl
                                         bg-neutral-950
-                                        text-lg
                                         text-amber-400
                                         transition-all
                                         duration-300
@@ -238,7 +349,7 @@ function Contact() {
                                         group-hover:text-neutral-950
                                     "
                                 >
-                                    →
+                                    <PhoneIcon />
                                 </div>
 
                             </div>
@@ -266,194 +377,190 @@ function Contact() {
 
                                 {/* Phone */}
 
-                                <a
-                                    href={`tel:${business.phone}`}
-                                    className="
-                                        group/item
-                                        flex
-                                        items-center
-                                        gap-4
-                                        rounded-xl
-                                        border
-                                        border-neutral-200
-                                        bg-neutral-50
-                                        p-4
-                                        transition-all
-                                        duration-300
-                                        hover:-translate-y-0.5
-                                        hover:border-amber-400/60
-                                        hover:bg-amber-50
-                                        hover:shadow-md
-                                    "
-                                >
-
-                                    <div
+                                {business.phone && (
+                                    <a
+                                        href={`tel:${business.phone}`}
                                         className="
+                                            group/item
                                             flex
-                                            h-10
-                                            w-10
-                                            shrink-0
                                             items-center
-                                            justify-center
-                                            rounded-lg
-                                            bg-neutral-950
-                                            text-sm
-                                            font-bold
-                                            text-white
+                                            gap-4
+                                            rounded-xl
+                                            border
+                                            border-neutral-200
+                                            bg-neutral-50
+                                            p-4
                                             transition-all
                                             duration-300
-                                            group-hover/item:scale-105
-                                            group-hover/item:bg-amber-500
-                                            group-hover/item:text-neutral-950
+                                            hover:-translate-y-0.5
+                                            hover:border-amber-400/60
+                                            hover:bg-amber-50
+                                            hover:shadow-md
                                         "
                                     >
-                                        ☎
-                                    </div>
 
-                                    <div className="min-w-0">
-
-                                        <p
+                                        <div
                                             className="
-                                                text-[10px]
-                                                font-bold
-                                                uppercase
-                                                tracking-[0.16em]
-                                                text-neutral-400
-                                            "
-                                        >
-                                            Phone
-                                        </p>
-
-                                        <p
-                                            className="
-                                                mt-1
-                                                truncate
-                                                text-sm
-                                                font-semibold
-                                                text-neutral-950
-                                                transition-colors
+                                                flex
+                                                h-10
+                                                w-10
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-lg
+                                                bg-neutral-950
+                                                text-white
+                                                transition-all
                                                 duration-300
-                                                group-hover/item:text-amber-600
+                                                group-hover/item:scale-105
+                                                group-hover/item:bg-amber-500
+                                                group-hover/item:text-neutral-950
                                             "
                                         >
-                                            {business.phone || "To be confirmed"}
-                                        </p>
+                                            <PhoneIcon />
+                                        </div>
 
-                                    </div>
+                                        <div className="min-w-0">
 
-                                    <span
-                                        className="
-                                            ml-auto
-                                            text-sm
-                                            text-neutral-300
-                                            transition-all
-                                            duration-300
-                                            group-hover/item:translate-x-1
-                                            group-hover/item:text-amber-500
-                                        "
-                                    >
-                                        →
-                                    </span>
+                                            <p
+                                                className="
+                                                    text-[10px]
+                                                    font-bold
+                                                    uppercase
+                                                    tracking-[0.16em]
+                                                    text-neutral-400
+                                                "
+                                            >
+                                                Phone
+                                            </p>
 
-                                </a>
+                                            <p
+                                                className="
+                                                    mt-1
+                                                    truncate
+                                                    text-sm
+                                                    font-semibold
+                                                    text-neutral-950
+                                                    transition-colors
+                                                    duration-300
+                                                    group-hover/item:text-amber-600
+                                                "
+                                            >
+                                                {business.phone}
+                                            </p>
+
+                                        </div>
+
+                                        <span
+                                            className="
+                                                ml-auto
+                                                text-neutral-300
+                                                transition-all
+                                                duration-300
+                                                group-hover/item:translate-x-1
+                                                group-hover/item:text-amber-500
+                                            "
+                                        >
+                                            <ArrowIcon />
+                                        </span>
+
+                                    </a>
+                                )}
 
 
                                 {/* WhatsApp */}
 
-                                <a
-                                    href={`https://wa.me/${String(
-                                        business.whatsapp || ""
-                                    ).replace(/\D/g, "")}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="
-                                        group/item
-                                        flex
-                                        items-center
-                                        gap-4
-                                        rounded-xl
-                                        border
-                                        border-neutral-200
-                                        bg-neutral-50
-                                        p-4
-                                        transition-all
-                                        duration-300
-                                        hover:-translate-y-0.5
-                                        hover:border-amber-400/60
-                                        hover:bg-amber-50
-                                        hover:shadow-md
-                                    "
-                                >
-
-                                    <div
+                                {business.whatsapp && (
+                                    <a
+                                        href={`https://wa.me/${whatsappNumber}`}
+                                        target="_blank"
+                                        rel="noreferrer"
                                         className="
+                                            group/item
                                             flex
-                                            h-10
-                                            w-10
-                                            shrink-0
                                             items-center
-                                            justify-center
-                                            rounded-lg
-                                            bg-neutral-950
-                                            text-sm
-                                            font-bold
-                                            text-white
+                                            gap-4
+                                            rounded-xl
+                                            border
+                                            border-neutral-200
+                                            bg-neutral-50
+                                            p-4
                                             transition-all
                                             duration-300
-                                            group-hover/item:scale-105
-                                            group-hover/item:bg-amber-500
-                                            group-hover/item:text-neutral-950
+                                            hover:-translate-y-0.5
+                                            hover:border-amber-400/60
+                                            hover:bg-amber-50
+                                            hover:shadow-md
                                         "
                                     >
-                                        W
-                                    </div>
 
-                                    <div className="min-w-0">
-
-                                        <p
+                                        <div
                                             className="
-                                                text-[10px]
-                                                font-bold
-                                                uppercase
-                                                tracking-[0.16em]
-                                                text-neutral-400
-                                            "
-                                        >
-                                            WhatsApp
-                                        </p>
-
-                                        <p
-                                            className="
-                                                mt-1
-                                                truncate
-                                                text-sm
-                                                font-semibold
-                                                text-neutral-950
-                                                transition-colors
+                                                flex
+                                                h-10
+                                                w-10
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-lg
+                                                bg-neutral-950
+                                                text-white
+                                                transition-all
                                                 duration-300
-                                                group-hover/item:text-amber-600
+                                                group-hover/item:scale-105
+                                                group-hover/item:bg-amber-500
+                                                group-hover/item:text-neutral-950
                                             "
                                         >
-                                            {business.whatsapp || "To be confirmed"}
-                                        </p>
+                                            <WhatsAppIcon />
+                                        </div>
 
-                                    </div>
+                                        <div className="min-w-0">
 
-                                    <span
-                                        className="
-                                            ml-auto
-                                            text-sm
-                                            text-neutral-300
-                                            transition-all
-                                            duration-300
-                                            group-hover/item:translate-x-1
-                                            group-hover/item:text-amber-500
-                                        "
-                                    >
-                                        →
-                                    </span>
+                                            <p
+                                                className="
+                                                    text-[10px]
+                                                    font-bold
+                                                    uppercase
+                                                    tracking-[0.16em]
+                                                    text-neutral-400
+                                                "
+                                            >
+                                                WhatsApp
+                                            </p>
 
-                                </a>
+                                            <p
+                                                className="
+                                                    mt-1
+                                                    truncate
+                                                    text-sm
+                                                    font-semibold
+                                                    text-neutral-950
+                                                    transition-colors
+                                                    duration-300
+                                                    group-hover/item:text-amber-600
+                                                "
+                                            >
+                                                {business.whatsapp}
+                                            </p>
+
+                                        </div>
+
+                                        <span
+                                            className="
+                                                ml-auto
+                                                text-neutral-300
+                                                transition-all
+                                                duration-300
+                                                group-hover/item:translate-x-1
+                                                group-hover/item:text-amber-500
+                                            "
+                                        >
+                                            <ArrowIcon />
+                                        </span>
+
+                                    </a>
+                                )}
 
 
                                 {/* Location */}
@@ -462,7 +569,7 @@ function Contact() {
                                     className="
                                         group/item
                                         flex
-                                        items-center
+                                        items-start
                                         gap-4
                                         rounded-xl
                                         border
@@ -488,8 +595,6 @@ function Contact() {
                                             justify-center
                                             rounded-lg
                                             bg-neutral-950
-                                            text-sm
-                                            font-bold
                                             text-white
                                             transition-all
                                             duration-300
@@ -498,7 +603,7 @@ function Contact() {
                                             group-hover/item:text-neutral-950
                                         "
                                     >
-                                        ●
+                                        <LocationIcon />
                                     </div>
 
                                     <div className="min-w-0">
@@ -564,8 +669,6 @@ function Contact() {
                                             justify-center
                                             rounded-lg
                                             bg-neutral-950
-                                            text-sm
-                                            font-bold
                                             text-white
                                             transition-all
                                             duration-300
@@ -574,7 +677,7 @@ function Contact() {
                                             group-hover/item:text-neutral-950
                                         "
                                     >
-                                        ◷
+                                        <ClockIcon />
                                     </div>
 
                                     <div className="min-w-0">
@@ -624,7 +727,6 @@ function Contact() {
                                     [&_a:hover]:text-neutral-950
                                     [&_a:hover]:shadow-lg
                                     [&_a:hover]:shadow-amber-500/20
-
                                     [&_button]:transition-all
                                     [&_button]:duration-300
                                     [&_button:hover]:-translate-y-1
@@ -923,7 +1025,7 @@ function Contact() {
                                                 group-hover/button:translate-x-1
                                             "
                                         >
-                                            →
+                                            <ArrowIcon />
                                         </span>
 
                                     </button>
@@ -1022,7 +1124,7 @@ function Contact() {
                                     group-hover/directions:translate-x-1
                                 "
                             >
-                                →
+                                <ArrowIcon />
                             </span>
 
                         </a>
@@ -1092,16 +1194,23 @@ function Contact() {
                         <div
                             className="
                                 mt-1
+                                flex
                                 h-8
-                                w-1
+                                w-8
                                 shrink-0
-                                rounded-full
-                                bg-amber-500
+                                items-center
+                                justify-center
+                                rounded-lg
+                                bg-neutral-950
+                                text-amber-400
                                 transition-all
                                 duration-300
-                                group-hover/address:h-10
+                                group-hover/address:bg-amber-500
+                                group-hover/address:text-neutral-950
                             "
-                        />
+                        >
+                            <LocationIcon />
+                        </div>
 
                         <div>
 

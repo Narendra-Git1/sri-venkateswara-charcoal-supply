@@ -10,6 +10,116 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ]
 
+// =========================================================
+// SOCIAL ICONS
+// =========================================================
+
+function InstagramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+      />
+
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+      />
+
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r="1"
+        fill="currentColor"
+        stroke="none"
+      />
+    </svg>
+  )
+}
+
+
+function FacebookIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M14 8h3V4h-3c-3.314 0-5 1.686-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.668.332-1 1-1Z" />
+    </svg>
+  )
+}
+
+
+function WhatsAppIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
+      />
+
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.5 8.5c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.5 1 1.3 1.8 2.4 2.3l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.3.3-2.7-.3-1.1-.5-2.2-1.3-3.1-2.2-.9-.9-1.7-2-2.2-3.1-.6-1.4-.5-2.3-.3-2.7Z"
+      />
+    </svg>
+  )
+}
+
+
+function ArrowIcon() {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4 10h11"
+      />
+
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 5.5 15 10l-4.5 4.5"
+      />
+    </svg>
+  )
+}
+
+
+// =========================================================
+// FOOTER
+// =========================================================
+
 function Footer() {
   const whatsappNumber = business.whatsapp
     ? String(business.whatsapp).replace(/\D/g, "")
@@ -18,26 +128,31 @@ function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-neutral-800 bg-neutral-950 text-white">
 
-      {/* Background accents */}
+      {/* =====================================================
+          BACKGROUND ACCENTS
+      ====================================================== */}
+
       <div className="pointer-events-none absolute -right-40 -top-40 h-80 w-80 rounded-full bg-amber-500/5 blur-3xl" />
+
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-amber-500/5 blur-3xl" />
 
-      {/* =========================================================
+
+      {/* =====================================================
           MAIN FOOTER
-      ========================================================== */}
+      ====================================================== */}
 
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
 
         <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
 
 
-          {/* =====================================================
+          {/* =================================================
               BRAND
-          ====================================================== */}
+          ================================================== */}
 
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
 
-            {/* Logo + Brand */}
+            {/* Logo */}
 
             <a
               href="/"
@@ -64,12 +179,17 @@ function Footer() {
                   group-hover:ring-amber-500/50
                 "
               >
+
                 <img
                   src="/images/venkateswara-navbar.webp"
                   alt="Sri Venkateswara Charcoal Supply"
                   className="h-full w-full object-contain"
                 />
+
               </div>
+
+
+              {/* Brand Name */}
 
               <div className="leading-tight">
 
@@ -116,7 +236,7 @@ function Footer() {
             </p>
 
 
-            {/* Tagline */}
+            {/* Professional Tagline */}
 
             <div className="mt-5 border-l-2 border-amber-500 pl-4 text-left">
 
@@ -142,6 +262,7 @@ function Footer() {
               </p>
 
               <div className="flex items-center justify-center gap-3 md:justify-start">
+
 
                 {/* Instagram */}
 
@@ -171,35 +292,7 @@ function Footer() {
                     hover:shadow-amber-500/20
                   "
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="h-5 w-5"
-                  >
-                    <rect
-                      x="3"
-                      y="3"
-                      width="18"
-                      height="18"
-                      rx="5"
-                    />
-
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="4"
-                    />
-
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
+                  <InstagramIcon />
                 </a>
 
 
@@ -231,13 +324,7 @@ function Footer() {
                     hover:shadow-amber-500/20
                   "
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M14 8h3V4h-3c-3.314 0-5 1.686-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.668.332-1 1-1Z" />
-                  </svg>
+                  <FacebookIcon />
                 </a>
 
 
@@ -270,17 +357,7 @@ function Footer() {
                       hover:shadow-amber-500/20
                     "
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      className="h-5 w-5"
-                    >
-                      <path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" />
-
-                      <path d="M8.5 8.5c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.5 1 1.3 1.8 2.4 2.3l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.3.3-2.7-.3-1.1-.5-2.2-1.3-3.1-2.2-.9-.9-1.7-2-2.2-3.1-.6-1.4-.5-2.3-.3-2.7Z" />
-                    </svg>
+                    <WhatsAppIcon />
                   </a>
                 )}
 
@@ -291,9 +368,9 @@ function Footer() {
           </div>
 
 
-          {/* =====================================================
+          {/* =================================================
               QUICK LINKS
-          ====================================================== */}
+          ================================================== */}
 
           <div>
 
@@ -359,9 +436,9 @@ function Footer() {
           </div>
 
 
-          {/* =====================================================
+          {/* =================================================
               CONTACT
-          ====================================================== */}
+          ================================================== */}
 
           <div>
 
@@ -520,10 +597,12 @@ function Footer() {
                   "
                 >
 
-                  Get Directions
+                  <span>
+                    Get Directions
+                  </span>
 
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
+                    <ArrowIcon />
                   </span>
 
                 </a>
@@ -538,17 +617,36 @@ function Footer() {
       </div>
 
 
-      {/* =========================================================
-          COPYRIGHT
-      ========================================================== */}
+      {/* =====================================================
+          BOTTOM BAR
+      ====================================================== */}
 
       <div className="border-t border-neutral-800">
 
-        <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-4 text-center sm:px-6 lg:px-8">
+        <div
+          className="
+            mx-auto
+            flex
+            max-w-7xl
+            flex-col
+            items-center
+            justify-center
+            gap-2
+            px-4
+            py-4
+            text-center
+            sm:px-6
+            lg:px-8
+          "
+        >
 
-          <p className="text-xs text-neutral-500 sm:text-sm">
+          <p className="text-xs leading-5 text-neutral-500 sm:text-sm">
             © {new Date().getFullYear()} Sri Venkateswara Charcoal Supply.
             All rights reserved.
+          </p>
+
+          <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-neutral-700">
+            Quality Charcoal • Reliable Supply • Wholesale & Retail
           </p>
 
         </div>
