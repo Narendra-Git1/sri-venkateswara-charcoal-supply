@@ -3,25 +3,25 @@ const features = [
     number: "01",
     title: "Quality Products",
     description:
-      "Charcoal products selected to support different household, cooking, commercial and grounding requirements.",
+      "Charcoal products selected for household, cooking, commercial and grounding requirements.",
   },
   {
     number: "02",
     title: "Wholesale & Retail",
     description:
-      "Supply options for both individual customers and businesses requiring charcoal in larger quantities.",
+      "Flexible supply options for individual customers and businesses requiring larger quantities.",
   },
   {
     number: "03",
     title: "Reliable Supply",
     description:
-      "A dependable charcoal supply approach for customers who need consistent product availability.",
+      "Consistent charcoal availability for customers who depend on regular supply.",
   },
   {
     number: "04",
     title: "Customer Support",
     description:
-      "Easy contact options to help customers enquire about products, quantities and requirements.",
+      "Simple assistance for product enquiries, quantities and supply requirements.",
   },
 ]
 
@@ -29,52 +29,38 @@ function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="relative overflow-hidden bg-neutral-950 py-20 text-white sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-neutral-950 py-16 text-white sm:py-20 lg:py-24"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-amber-500/5 blur-3xl" />
-
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-amber-500/5 blur-3xl" />
+      {/* Subtle Background Glow */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-amber-500/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-amber-500/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-        {/* =====================================================
-            SECTION HEADER
-        ====================================================== */}
+        {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-amber-500 sm:w-10" />
 
-          {/* Eyebrow */}
-          <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-amber-500" />
-
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400 sm:text-xs">
               Why Choose Us
             </span>
 
-            <span className="h-px w-10 bg-amber-500" />
+            <span className="h-px w-8 bg-amber-500 sm:w-10" />
           </div>
 
-          {/* Heading */}
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Quality Charcoal.
-            <span className="block text-amber-400">
-              Reliable Supply.
-            </span>
+            Trusted Charcoal Supply.
+            <span className="block text-amber-400">Made Simple.</span>
           </h2>
 
-          {/* Description */}
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg">
-            We focus on providing dependable charcoal products and supply
-            options for households, businesses and commercial requirements.
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-400 sm:mt-5 sm:text-base sm:leading-7">
+            Dependable charcoal products for households, businesses and
+            commercial requirements.
           </p>
-
         </div>
 
-        {/* =====================================================
-            FEATURE CARDS
-        ====================================================== */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
-
+        {/* Feature Cards */}
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-4">
           {features.map((feature) => (
             <article
               key={feature.number}
@@ -83,73 +69,60 @@ function WhyChooseUs() {
                 rounded-2xl
                 border border-neutral-800
                 bg-neutral-900/70
-                p-6
+                p-5
                 transition-all duration-300
-                hover:-translate-y-2
+                hover:-translate-y-1
                 hover:border-amber-500/50
                 hover:bg-neutral-900
-                hover:shadow-2xl
+                hover:shadow-xl
                 hover:shadow-amber-500/5
-                sm:p-7
+                sm:p-6
               "
             >
-
               {/* Top Accent */}
-              <div
-                className="
-                  absolute left-0 right-0 top-0
-                  h-0.5
-                  origin-left
-                  scale-x-0
-                  bg-amber-500
-                  transition-transform duration-300
-                  group-hover:scale-x-100
-                "
-              />
+              <div className="absolute left-0 right-0 top-0 h-0.5 bg-amber-500/70 transition-all duration-300 group-hover:bg-amber-400" />
 
-              {/* Number + Icon */}
+              {/* Number + Check */}
               <div className="flex items-center justify-between">
-
-                {/* Number */}
                 <span
                   className="
-                    text-4xl font-black tracking-tight
-                    text-neutral-800
+                    text-3xl font-black tracking-tight
+                    text-amber-400/60
                     transition-colors duration-300
-                    group-hover:text-amber-500/20
+                    group-hover:text-amber-400
+                    sm:text-4xl
                   "
                 >
                   {feature.number}
                 </span>
 
-                {/* Check Icon */}
                 <div
                   className="
                     flex h-10 w-10 items-center justify-center
                     rounded-full
-                    border border-neutral-700
-                    bg-neutral-950
-                    text-sm font-bold
-                    text-neutral-400
+                    border border-amber-500/50
+                    bg-amber-500/[0.06]
+                    text-base font-black
+                    text-amber-400
                     transition-all duration-300
-                    group-hover:border-amber-500
+                    group-hover:border-amber-400
                     group-hover:bg-amber-500
                     group-hover:text-neutral-950
                   "
                 >
                   ✓
                 </div>
-
               </div>
 
               {/* Title */}
               <h3
                 className="
-                  mt-8
-                  text-xl font-bold
+                  mt-7
+                  text-lg font-bold
                   text-white
                   transition-colors duration-300
                   group-hover:text-amber-400
+                  sm:text-xl
                 "
               >
                 {feature.title}
@@ -158,7 +131,7 @@ function WhyChooseUs() {
               {/* Description */}
               <p
                 className="
-                  mt-4
+                  mt-3
                   text-sm
                   leading-6
                   text-neutral-400
@@ -169,71 +142,60 @@ function WhyChooseUs() {
                 {feature.description}
               </p>
 
-              {/* Bottom Line */}
+              {/* Bottom Accent */}
               <div
                 className="
-                  mt-7
-                  h-px
-                  w-10
-                  bg-neutral-700
+                  mt-6
+                  h-0.5
+                  w-9
+                  rounded-full
+                  bg-amber-500/70
                   transition-all duration-500
                   group-hover:w-full
-                  group-hover:bg-amber-500/40
+                  group-hover:bg-amber-400
                 "
               />
-
             </article>
           ))}
-
         </div>
 
-        {/* =====================================================
-            TRUST STRIP
-        ====================================================== */}
+        {/* Trust Strip */}
         <div
           className="
-            mt-10
+            mt-8
             rounded-2xl
             border border-amber-500/20
             bg-amber-500/[0.04]
-            px-6 py-6
-            sm:px-8
+            px-5 py-5
+            sm:mt-10 sm:px-7 sm:py-6
           "
         >
-
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-bold text-amber-400 sm:text-base">
-                Quality You Can Trust. Supply You Can Depend On.
+                Quality You Can Trust.
               </p>
 
-              <p className="mt-1.5 text-xs leading-5 text-neutral-500">
-                Serving retail, wholesale and commercial charcoal requirements.
+              <p className="mt-1 text-xs leading-5 text-neutral-500 sm:text-sm">
+                Retail, wholesale and commercial charcoal supply.
               </p>
             </div>
 
-            {/* Supply Categories */}
             <div className="flex flex-wrap gap-2">
-
-              <span className="rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-neutral-400">
+              <span className="rounded-full border border-amber-500/25 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-amber-300">
                 Retail
               </span>
 
-              <span className="rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-neutral-400">
+              <span className="rounded-full border border-amber-500/25 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-amber-300">
                 Wholesale
               </span>
 
-              <span className="rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-neutral-400">
+              <span className="rounded-full border border-amber-500/25 bg-neutral-900 px-3 py-1.5 text-xs font-medium text-amber-300">
                 Commercial
               </span>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   )
