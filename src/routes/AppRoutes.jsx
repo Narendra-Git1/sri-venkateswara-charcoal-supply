@@ -7,6 +7,7 @@ import About from "../pages/About/About"
 import WholesaleRetail from "../pages/WholesaleRetail/WholesaleRetail"
 import Gallery from "../pages/Gallery/Gallery"
 import FAQ from "../pages/FAQ/FAQ"
+import Contact from "../pages/Contact/Contact"
 
 function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ function AppRoutes() {
 />
 <Route path="/gallery" element={<Gallery />} />
 <Route path="/faq" element={<FAQ />} />
+<Route path="/contact" element={<Contact />} />
     </Routes>
 
   )

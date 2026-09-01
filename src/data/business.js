@@ -1,19 +1,10 @@
 export const business = {
   name: "Sri Venkateswara Charcoal Supply",
-  shortName: "Sri Venkateswara Charcoal Supply",
 
   phone: "",
   whatsapp: "",
   address: "",
-  mapsUrl: "",
+  directionsUrl: "",
 
-  hours: {
-    weekdays: "",
-    weekends: "",
-  },
-
-  social: {
-    instagram: "",
-    facebook: "",
-  },
+  businessHours: "",
 }

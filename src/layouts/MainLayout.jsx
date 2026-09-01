@@ -1,5 +1,6 @@
 import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
+import StickyContactBar from "../components/contact/StickyContactBar"
 
 function MainLayout({ children }) {
   return (
@@ -9,8 +10,9 @@ function MainLayout({ children }) {
       <main>
         {children}
       </main>
-
+      
       <Footer />
+      <StickyContactBar />
     </div>
   )
 }

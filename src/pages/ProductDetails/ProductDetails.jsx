@@ -112,12 +112,12 @@ function ProductDetails() {
 
                             {/* Enquiry */}
                             <div className="mt-10 space-y-6">
-                                <a
-                                    href="/#contact"
+                                <Link
+                                    to="/contact"
                                     className="inline-flex rounded-lg bg-neutral-950 px-7 py-4 font-bold text-white transition hover:bg-neutral-800"
                                 >
                                     Enquire About This Product →
-                                </a>
+                                </Link>
 
                                 <div>
                                     <p className="mb-3 text-sm font-semibold text-neutral-500">
