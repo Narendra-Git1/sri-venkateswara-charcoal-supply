@@ -22,13 +22,11 @@ function ProductCard({ product }) {
         hover:shadow-neutral-900/10
       "
     >
-
       {/* =====================================================
           PRODUCT IMAGE
       ====================================================== */}
 
       <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-
         <img
           src={product.image}
           alt={product.name}
@@ -67,8 +65,8 @@ function ProductCard({ product }) {
         <div
           className="
             absolute
-            left-4
-            top-4
+            left-3
+            top-3
             rounded-full
             border
             border-white/20
@@ -82,87 +80,122 @@ function ProductCard({ product }) {
             text-white
             shadow-lg
             backdrop-blur-sm
+            sm:left-4
+            sm:top-4
           "
         >
           Charcoal
         </div>
-
       </div>
-
 
       {/* =====================================================
           PRODUCT CONTENT
       ====================================================== */}
 
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
-
+      <div
+        className="
+          flex
+          flex-1
+          flex-col
+          p-5
+          sm:p-6
+          lg:p-7
+        "
+      >
         {/* Small Accent */}
 
         <div className="mb-4 flex items-center gap-2">
+          <span
+            className="
+              h-1
+              w-7
+              rounded-full
+              bg-amber-500
+              transition-all
+              duration-300
+              group-hover:w-10
+            "
+          />
 
-          <span className="h-1 w-7 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-10" />
-
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-400">
+          <span
+            className="
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-neutral-400
+            "
+          >
             Quality Supply
           </span>
-
         </div>
-
 
         {/* Product Name */}
 
         <h3
           className="
-            text-xl
+            text-lg
             font-bold
             leading-tight
             text-neutral-950
             transition-colors
             duration-300
             group-hover:text-amber-600
+            sm:text-xl
           "
         >
           {product.name}
         </h3>
 
-
         {/* Description */}
 
-        <p className="mt-3 text-sm leading-6 text-neutral-600">
+        <p
+          className="
+            mt-3
+            text-sm
+            leading-6
+            text-neutral-600
+          "
+        >
           {product.shortDescription}
         </p>
-
 
         {/* =================================================
             PRODUCT LINK
         ================================================== */}
 
-        <div className="mt-auto pt-7">
-
+        <div className="mt-auto pt-6 sm:pt-7">
           <Link
             to={`/products/${product.id}`}
             className="
               group/link
               inline-flex
+              w-full
               items-center
+              justify-center
               gap-2
-              rounded-lg
+              rounded-xl
               border
-              border-neutral-200
-              bg-neutral-50
+              border-amber-500
+              bg-amber-500
               px-4
-              py-2.5
+              py-3
               text-sm
               font-bold
               text-neutral-950
+              shadow-sm
               transition-all
               duration-300
+              hover:-translate-y-0.5
+              hover:bg-amber-400
               hover:border-amber-400
-              hover:bg-amber-500
-              hover:text-neutral-950
+              hover:shadow-md
+              hover:shadow-amber-500/20
+              active:translate-y-0
+              sm:w-auto
+              sm:justify-start
             "
           >
-
             <span>
               View Product
             </span>
@@ -171,6 +204,7 @@ function ProductCard({ product }) {
               aria-hidden="true"
               className="
                 text-base
+                font-bold
                 transition-transform
                 duration-300
                 group-hover/link:translate-x-1
@@ -178,13 +212,9 @@ function ProductCard({ product }) {
             >
               →
             </span>
-
           </Link>
-
         </div>
-
       </div>
-
     </article>
   )
 }
