@@ -1,4 +1,3 @@
-import ContactActions from "../../components/contact/ContactActions"
 import WhyChooseUs from "../../components/common/WhyChooseUs"
 import ProductsSection from "../../components/products/ProductsSection"
 import WholesaleSection from "../../components/wholesale/WholesaleSection"
@@ -32,19 +31,10 @@ const services = [
 
 const trustPoints = [
   "15+ Years Experience",
-  "Quality Charcoal",
-  "Retail & Bulk Supply",
+  "Wide Range of Uses",
 ]
 
 function Home() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    })
-  }
-
   return (
     <main>
       {/* =========================================================
@@ -264,44 +254,6 @@ function Home() {
                 ))}
               </div>
 
-              {/* =================================================
-                  CTA AREA
-              ================================================== */}
-              <div className="
-                mt-7
-                animate-[heroFade_0.65s_ease-out_0.32s_both]
-                motion-reduce:animate-none
-              ">
-                <ContactActions />
-              </div>
-
-              {/* Service statement */}
-              <div className="
-                mt-6
-                flex
-                items-center
-                gap-3
-                animate-[heroFade_0.65s_ease-out_0.38s_both]
-                motion-reduce:animate-none
-              ">
-                <span
-                  aria-hidden="true"
-                  className="h-px w-9 shrink-0 bg-amber-500"
-                />
-
-                <p
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.2em]
-                    text-neutral-500
-                    sm:text-xs
-                  "
-                >
-                  Retail & Bulk Charcoal Supply
-                </p>
-              </div>
             </div>
 
             {/* =================================================
@@ -366,112 +318,6 @@ function Home() {
                 />
               </div>
 
-              {/* =================================================
-                  BUSINESS HIGHLIGHTS / QUOTES
-                  Positioned directly below the right-side image.
-                  Clean, compact and non-overlapping.
-              ================================================== */}
-              <div
-                className="
-                  mt-4
-                  grid
-                  grid-cols-1
-                  gap-3
-                  sm:grid-cols-3
-                  lg:grid-cols-1
-                  xl:grid-cols-3
-                  animate-[heroFade_0.65s_ease-out_0.38s_both]
-                  motion-reduce:animate-none
-                "
-              >
-                
-
-                <div
-                  className="
-                    group
-                    rounded-xl
-                    border
-                    border-neutral-800
-                    bg-neutral-900/55
-                    px-4
-                    py-3.5
-                    transition-all
-                    duration-300
-                    md:hover:-translate-y-1
-                    md:hover:border-amber-400/30
-                    md:hover:bg-neutral-900
-                  "
-                >
-                  <div className="mb-2 flex items-center gap-2">
-                    <span
-                      aria-hidden="true"
-                      className="
-                        flex
-                        h-7
-                        w-7
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-amber-400/10
-                        text-sm
-                        text-amber-400
-                      "
-                    >
-                      “
-                    </span>
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
-                      Reliable Supply
-                    </p>
-                  </div>
-                  <p className="text-xs leading-5 text-neutral-400 sm:text-sm">
-                    Retail and bulk supply with a focus on reliable service and timely requirements.
-                  </p>
-                </div>
-
-                <div
-                  className="
-                    group
-                    rounded-xl
-                    border
-                    border-neutral-800
-                    bg-neutral-900/55
-                    px-4
-                    py-3.5
-                    transition-all
-                    duration-300
-                    md:hover:-translate-y-1
-                    md:hover:border-amber-400/30
-                    md:hover:bg-neutral-900
-                  "
-                >
-                  <div className="mb-2 flex items-center gap-2">
-                    <span
-                      aria-hidden="true"
-                      className="
-                        flex
-                        h-7
-                        w-7
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-amber-400/10
-                        text-sm
-                        text-amber-400
-                      "
-                    >
-                      “
-                    </span>
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
-                      Trusted Service
-                    </p>
-                  </div>
-                  <p className="text-xs leading-5 text-neutral-400 sm:text-sm">
-                    Serving household, restaurants, tandoors, BBQ and iron-heating needs.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -578,39 +424,6 @@ function Home() {
             </div>
           </div>
 
-          {/* =====================================================
-              BOTTOM TRUST STRIP
-              Kept simple and centered to avoid empty/overlapping
-              content on wide screens.
-          ====================================================== */}
-          <div
-            className="
-              mt-7
-              border-t
-              border-neutral-800
-              pt-5
-              text-center
-            "
-          >
-            <p
-              className="
-                text-[10px]
-                font-semibold
-                uppercase
-                tracking-[0.18em]
-                text-neutral-500
-                sm:text-xs
-                md:text-sm
-                md:tracking-[0.22em]
-              "
-            >
-              Quality Charcoal
-              <span className="mx-2 text-amber-500">•</span>
-              Reliable Supply
-              <span className="mx-2 text-amber-500">•</span>
-              Trusted Service
-            </p>
-          </div>
         </div>
       </section>
 
