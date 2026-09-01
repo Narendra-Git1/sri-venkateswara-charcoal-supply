@@ -1,8 +1,11 @@
+import { business } from "../../data/business"
+
 function Footer() {
   return (
     <footer className="border-t border-neutral-800 bg-neutral-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
 
+        {/* Business */}
         <div>
           <h2 className="text-xl font-bold">
             Sri Venkateswara
@@ -18,6 +21,7 @@ function Footer() {
           </p>
         </div>
 
+        {/* Quick Links */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-300">
             Quick Links
@@ -28,42 +32,76 @@ function Footer() {
               Home
             </a>
 
-            <a href="#products" className="text-sm text-neutral-400 hover:text-white">
+            <a href="/products" className="text-sm text-neutral-400 hover:text-white">
               Products
             </a>
 
-            <a href="#about" className="text-sm text-neutral-400 hover:text-white">
+            <a href="/about" className="text-sm text-neutral-400 hover:text-white">
               About Us
             </a>
 
-            <a href="#wholesale" className="text-sm text-neutral-400 hover:text-white">
+            <a
+              href="/wholesale-retail"
+              className="text-sm text-neutral-400 hover:text-white"
+            >
               Wholesale & Retail
             </a>
 
-            <a href="#gallery" className="text-sm text-neutral-400 hover:text-white">
+            <a href="/gallery" className="text-sm text-neutral-400 hover:text-white">
               Gallery
             </a>
 
-            <a href="#faq" className="text-sm text-neutral-400 hover:text-white">
+            <a href="/faq" className="text-sm text-neutral-400 hover:text-white">
               FAQ
             </a>
 
-            <a href="#contact" className="text-sm text-neutral-400 hover:text-white">
+            <a href="/contact" className="text-sm text-neutral-400 hover:text-white">
               Contact
             </a>
           </div>
         </div>
 
+        {/* Contact */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-300">
             Contact
           </h3>
 
           <div className="mt-4 space-y-3 text-sm text-neutral-400">
-            <p>Phone: To be confirmed</p>
-            <p>WhatsApp: To be confirmed</p>
-            <p>Location: To be confirmed</p>
-            <p>Business Hours: To be confirmed</p>
+
+            <a
+              href={`tel:${business.phone}`}
+              className="block hover:text-white"
+            >
+              Phone: {business.phone}
+            </a>
+
+            <a
+              href={`https://wa.me/${business.whatsapp}`}
+              target="_blank"
+              rel="noreferrer"
+              className="block hover:text-white"
+            >
+              WhatsApp: {business.whatsapp}
+            </a>
+
+            <p>
+              Location: {business.address}
+            </p>
+
+            <p>
+              Business Hours: {business.businessHours}
+            </p>
+
+            <a
+              href={business.directionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block font-semibold text-white hover:text-neutral-300"
+            >
+              Get Directions →
+            </a>
+
           </div>
         </div>
 
