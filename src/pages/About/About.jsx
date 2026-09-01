@@ -5,7 +5,6 @@ function About() {
       title: "Iron Heating",
       description:
         "Our primary focus is dependable charcoal supply for iron heating and related commercial requirements.",
-      featured: true,
     },
     {
       number: "02",
@@ -392,213 +391,98 @@ function About() {
 
 
             {/* Application cards */}
+            <div className="mt-8">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                {applications.map((item, index) => (
+                  <article
+                    key={item.number}
+                    className="
+                      group relative overflow-hidden rounded-2xl
+                      border border-neutral-200 bg-white p-5
+                      shadow-sm
+                      transition-all duration-300 ease-out
+                      hover:-translate-y-1
+                      hover:border-amber-400
+                      hover:shadow-lg hover:shadow-amber-500/10
+                      animate-[cardReveal_0.7s_ease-out_both]
+                      motion-reduce:animate-none
+                    "
+                    style={{ animationDelay: `${index * 120}ms` }}
+                  >
+                    {/* Top accent */}
+                    <div
+                      className="
+                        absolute left-0 right-0 top-0 h-1
+                        bg-amber-500
+                        opacity-0
+                        transition-opacity duration-300
+                        group-hover:opacity-100
+                      "
+                    />
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    {/* Number + check */}
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="
+                          text-sm font-black tracking-[0.15em]
+                          text-amber-600
+                        "
+                      >
+                        {item.number}
+                      </span>
 
-              {applications.map((item, index) => (
-                <article
-                  key={item.number}
-                  className={`
-                    group relative overflow-hidden
-                    rounded-2xl p-5
-                    transition-all duration-500 ease-out
-                    hover:-translate-y-2
-                    hover:shadow-xl
-                    animate-[fadeInUp_0.6s_ease-out_both]
-                    motion-reduce:animate-none
-                    ${
-                      item.featured
-                        ? "border-2 border-amber-500 bg-neutral-950 text-white shadow-lg shadow-amber-500/10"
-                        : "border border-neutral-200 bg-white text-neutral-950"
-                    }
-                  `}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                >
+                      <span
+                        className="
+                          flex h-9 w-9 items-center justify-center
+                          rounded-full border border-amber-200
+                          bg-amber-50 text-sm font-bold text-amber-600
+                          transition-all duration-300
+                          group-hover:border-amber-500
+                          group-hover:bg-amber-500
+                          group-hover:text-neutral-950
+                        "
+                      >
+                        ✓
+                      </span>
+                    </div>
 
-                  {/* Hover glow */}
-
-                  <div
-                    className={`
-                      pointer-events-none absolute -right-12 -top-12
-                      h-28 w-28 rounded-full blur-2xl
-                      opacity-0
-                      transition-all duration-500
-                      group-hover:scale-150
-                      group-hover:opacity-100
-                      ${
-                        item.featured
-                          ? "bg-amber-500/15"
-                          : "bg-amber-500/10"
-                      }
-                    `}
-                  />
-
-                  <div className="relative flex items-center justify-between">
-
-                    <span
-                      className={`
-                        text-xs font-black tracking-[0.15em]
-                        transition-transform duration-300
-                        group-hover:translate-x-1
-                        ${
-                          item.featured
-                            ? "text-amber-400"
-                            : "text-neutral-300"
-                        }
-                      `}
+                    {/* Title */}
+                    <h3
+                      className="
+                        mt-7 text-lg font-bold leading-snug
+                        text-neutral-950
+                        transition-colors duration-300
+                        group-hover:text-amber-600
+                      "
                     >
-                      {item.number}
-                    </span>
+                      {item.title}
+                    </h3>
 
-                    <span
-                      className={`
-                        flex h-8 w-8 items-center justify-center
-                        rounded-full text-xs font-bold
+                    {/* Description */}
+                    <p
+                      className="
+                        mt-3 text-sm leading-6
+                        text-neutral-600
+                      "
+                    >
+                      {item.description}
+                    </p>
+
+                    {/* Bottom accent */}
+                    <div
+                      className="
+                        mt-6 h-1 w-8 rounded-full
+                        bg-neutral-200
                         transition-all duration-300
-                        group-hover:rotate-6
-                        group-hover:scale-110
-                        ${
-                          item.featured
-                            ? "bg-amber-500 text-neutral-950"
-                            : "bg-neutral-100 text-neutral-600 group-hover:bg-amber-500 group-hover:text-neutral-950"
-                        }
-                      `}
-                    >
-                      ✓
-                    </span>
-                  </div>
-
-                  <h3
-                    className={`
-                      relative mt-6 text-lg font-bold
-                      transition-colors duration-300
-                      ${
-                        item.featured
-                          ? "text-white group-hover:text-amber-400"
-                          : "text-neutral-950 group-hover:text-amber-600"
-                      }
-                    `}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    className={`
-                      relative mt-3 text-xs leading-5
-                      ${
-                        item.featured
-                          ? "text-neutral-400"
-                          : "text-neutral-600"
-                      }
-                    `}
-                  >
-                    {item.description}
-                  </p>
-
-                  <div
-                    className={`
-                      mt-6 h-1 w-8 rounded-full
-                      transition-all duration-700
-                      group-hover:w-full
-                      ${
-                        item.featured
-                          ? "bg-amber-500"
-                          : "bg-neutral-200 group-hover:bg-amber-500"
-                      }
-                    `}
-                  />
-                </article>
-              ))}
-
+                        group-hover:w-16
+                        group-hover:bg-amber-500
+                      "
+                    />
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
-
-
-          {/* =====================================================
-              OUR APPROACH
-          ====================================================== */}
-
-          <div className="mt-14">
-
-            <div className="grid gap-4 md:grid-cols-3">
-
-              {[
-                {
-                  number: "01",
-                  title: "Quality Products",
-                  description:
-                    "We focus on supplying suitable charcoal products for different applications and customer requirements.",
-                },
-                {
-                  number: "02",
-                  title: "Reliable Supply",
-                  description:
-                    "We support retail, wholesale and commercial customers with supply options based on their requirements.",
-                },
-                {
-                  number: "03",
-                  title: "Customer Focus",
-                  description:
-                    "We make it easy for customers to discuss product type, application, quantity and supply requirements.",
-                },
-              ].map((item, index) => (
-                <article
-                  key={item.number}
-                  className="
-                    group rounded-2xl
-                    border border-neutral-200
-                    bg-white p-6
-                    transition-all duration-500
-                    hover:-translate-y-2
-                    hover:border-amber-400/50
-                    hover:shadow-xl
-                    animate-[fadeInUp_0.7s_ease-out_both]
-                    motion-reduce:animate-none
-                  "
-                  style={{
-                    animationDelay: `${index * 120}ms`,
-                  }}
-                >
-
-                  <div
-                    className="
-                      flex h-10 w-10 items-center justify-center
-                      rounded-xl bg-amber-100
-                      text-sm font-black text-amber-700
-                      transition-all duration-300
-                      group-hover:rotate-3
-                      group-hover:scale-110
-                      group-hover:bg-amber-500
-                      group-hover:text-neutral-950
-                    "
-                  >
-                    {item.number}
-                  </div>
-
-                  <h3 className="mt-5 text-lg font-bold text-neutral-950 transition-colors duration-300 group-hover:text-amber-600">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-6 text-neutral-600">
-                    {item.description}
-                  </p>
-
-                  <div
-                    className="
-                      mt-5 h-px w-8 bg-neutral-200
-                      transition-all duration-500
-                      group-hover:w-full
-                      group-hover:bg-amber-500
-                    "
-                  />
-                </article>
-              ))}
-
-            </div>
-          </div>
-
 
           {/* =====================================================
               FINAL BUSINESS STATEMENT
@@ -669,6 +553,19 @@ function About() {
       ========================================================== */}
 
       <style>{`
+
+        @keyframes cardReveal {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @keyframes fadeInUp {
           from {
             opacity: 0;
