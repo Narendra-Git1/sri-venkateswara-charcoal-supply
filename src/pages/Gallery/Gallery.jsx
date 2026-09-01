@@ -30,12 +30,22 @@ function Gallery() {
     <main className="bg-white">
 
       {/* =========================================================
-          GALLERY HERO
+          HERO
       ========================================================== */}
 
-      <section className="relative overflow-hidden bg-neutral-950 py-16 text-white sm:py-20 lg:py-24">
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-neutral-950
+          py-16
+          text-white
+          sm:py-20
+          lg:py-24
+        "
+      >
 
-        {/* Background Accents */}
+        {/* Background Glow */}
 
         <div
           className="
@@ -48,6 +58,8 @@ function Gallery() {
             rounded-full
             bg-amber-500/10
             blur-3xl
+            animate-[galleryGlow_8s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
 
@@ -62,29 +74,57 @@ function Gallery() {
             rounded-full
             bg-amber-500/5
             blur-3xl
+            animate-[galleryGlowReverse_10s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
 
+        {/* Decorative Line */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-1/2
+            top-0
+            h-px
+            w-24
+            -translate-x-1/2
+            bg-amber-500
+            animate-[lineReveal_0.8s_ease-out]
+            motion-reduce:animate-none
+          "
+        />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mx-auto max-w-3xl text-center">
+          <div
+            className="
+              mx-auto
+              max-w-3xl
+              text-center
+              animate-[fadeInUp_0.8s_ease-out]
+              motion-reduce:animate-none
+            "
+          >
 
             {/* Eyebrow */}
 
-            <div className="mb-5 flex items-center justify-center gap-3">
+            <div
+              className="
+                mb-5
+                flex
+                items-center
+                justify-center
+                gap-3
+                animate-[fadeInUp_0.7s_ease-out_0.1s_both]
+                motion-reduce:animate-none
+              "
+            >
 
               <span className="h-px w-10 bg-amber-500" />
 
-              <span
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[0.22em]
-                  text-amber-400
-                "
-              >
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
                 Gallery
               </span>
 
@@ -103,11 +143,20 @@ function Gallery() {
                 tracking-tight
                 sm:text-4xl
                 lg:text-5xl
+                animate-[titleReveal_0.8s_ease-out_0.2s_both]
+                motion-reduce:animate-none
               "
             >
               Our Charcoal Products
 
-              <span className="block text-amber-400">
+              <span
+                className="
+                  block
+                  text-amber-400
+                  animate-[titleReveal_0.8s_ease-out_0.35s_both]
+                  motion-reduce:animate-none
+                "
+              >
                 Quality You Can See
               </span>
             </h1>
@@ -124,6 +173,8 @@ function Gallery() {
                 leading-7
                 text-neutral-400
                 sm:text-lg
+                animate-[fadeInUp_0.8s_ease-out_0.45s_both]
+                motion-reduce:animate-none
               "
             >
               Explore our range of charcoal products for cooking,
@@ -141,7 +192,16 @@ function Gallery() {
           GALLERY
       ========================================================== */}
 
-      <section className="relative overflow-hidden bg-neutral-50 py-16 sm:py-20 lg:py-24">
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-neutral-50
+          py-16
+          sm:py-20
+          lg:py-24
+        "
+      >
 
         {/* Background Accent */}
 
@@ -156,6 +216,8 @@ function Gallery() {
             rounded-full
             bg-amber-500/5
             blur-3xl
+            animate-[galleryGlow_12s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
 
@@ -167,7 +229,18 @@ function Gallery() {
               GALLERY HEADER
           ====================================================== */}
 
-          <div className="mb-10 flex items-end justify-between gap-6">
+          <div
+            className="
+              mb-10
+              flex
+              items-end
+              justify-between
+              gap-6
+              opacity-0
+              animate-[fadeInUp_0.8s_ease-out_0.2s_both]
+              motion-reduce:animate-none
+            "
+          >
 
             <div>
 
@@ -201,7 +274,7 @@ function Gallery() {
 
             <div className="hidden items-center gap-2 sm:flex">
 
-              <span className="h-2 w-2 rounded-full bg-amber-500" />
+              <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
 
               <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
                 4 Product Categories
@@ -219,6 +292,7 @@ function Gallery() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
             {galleryImages.map((item, index) => (
+
               <article
                 key={item.id}
                 className="
@@ -230,14 +304,38 @@ function Gallery() {
                   border-neutral-200
                   bg-white
                   shadow-sm
+                  opacity-0
+                  animate-[cardReveal_0.7s_ease-out_both]
                   transition-all
-                  duration-300
+                  duration-500
                   hover:-translate-y-2
                   hover:border-amber-400/60
                   hover:shadow-xl
                   hover:shadow-neutral-900/10
+                  motion-reduce:animate-none
+                  motion-reduce:transition-none
                 "
+                style={{
+                  animationDelay: `${0.35 + index * 0.12}s`,
+                }}
               >
+
+                {/* Card Glow */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    -inset-1
+                    rounded-2xl
+                    bg-amber-500/0
+                    blur-xl
+                    transition-all
+                    duration-500
+                    group-hover:bg-amber-500/10
+                  "
+                />
+
 
                 {/* Image */}
 
@@ -255,7 +353,7 @@ function Gallery() {
                       transition-transform
                       duration-700
                       ease-out
-                      group-hover:scale-105
+                      group-hover:scale-110
                     "
                   />
 
@@ -267,12 +365,12 @@ function Gallery() {
                       absolute
                       inset-0
                       bg-gradient-to-t
-                      from-neutral-950/80
+                      from-neutral-950/85
                       via-neutral-950/10
                       to-transparent
-                      opacity-70
+                      opacity-60
                       transition-opacity
-                      duration-300
+                      duration-500
                       group-hover:opacity-90
                     "
                   />
@@ -298,6 +396,12 @@ function Gallery() {
                       font-bold
                       text-white
                       backdrop-blur-sm
+                      transition-all
+                      duration-500
+                      group-hover:scale-110
+                      group-hover:border-amber-400
+                      group-hover:bg-amber-500
+                      group-hover:text-neutral-950
                     "
                   >
                     0{index + 1}
@@ -306,7 +410,20 @@ function Gallery() {
 
                   {/* Category */}
 
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div
+                    className="
+                      absolute
+                      bottom-4
+                      left-4
+                      right-4
+                      translate-y-2
+                      opacity-80
+                      transition-all
+                      duration-500
+                      group-hover:translate-y-0
+                      group-hover:opacity-100
+                    "
+                  >
 
                     <p
                       className="
@@ -327,7 +444,7 @@ function Gallery() {
 
                 {/* Product Information */}
 
-                <div className="p-5">
+                <div className="relative p-5">
 
                   <div className="flex items-center justify-between gap-3">
 
@@ -358,7 +475,8 @@ function Gallery() {
                         text-sm
                         text-neutral-500
                         transition-all
-                        duration-300
+                        duration-500
+                        group-hover:translate-x-1
                         group-hover:bg-amber-500
                         group-hover:text-neutral-950
                       "
@@ -368,11 +486,26 @@ function Gallery() {
 
                   </div>
 
-                  <div className="mt-4 h-1 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-12" />
+
+                  {/* Animated Accent */}
+
+                  <div
+                    className="
+                      mt-4
+                      h-1
+                      w-8
+                      rounded-full
+                      bg-amber-500
+                      transition-all
+                      duration-500
+                      group-hover:w-16
+                    "
+                  />
 
                 </div>
 
               </article>
+
             ))}
 
           </div>
@@ -391,6 +524,15 @@ function Gallery() {
               border-neutral-200
               bg-white
               shadow-sm
+              opacity-0
+              animate-[fadeInUp_0.8s_ease-out_0.9s_both]
+              transition-all
+              duration-500
+              hover:-translate-y-1
+              hover:border-amber-300
+              hover:shadow-lg
+              motion-reduce:animate-none
+              motion-reduce:transition-none
             "
           >
 
@@ -418,6 +560,8 @@ function Gallery() {
                     shrink-0
                     rounded-full
                     bg-amber-500
+                    transition-all
+                    duration-500
                   "
                 />
 
@@ -440,12 +584,13 @@ function Gallery() {
               <a
                 href="/contact"
                 className="
+                  group/contact
                   inline-flex
                   shrink-0
                   items-center
                   justify-center
                   gap-2
-                  rounded-lg
+                  rounded-xl
                   bg-neutral-950
                   px-5
                   py-3
@@ -454,16 +599,25 @@ function Gallery() {
                   text-white
                   transition-all
                   duration-300
-                  hover:-translate-y-0.5
+                  hover:-translate-y-1
                   hover:bg-amber-500
                   hover:text-neutral-950
                   hover:shadow-lg
                   hover:shadow-amber-500/20
                 "
               >
-                Enquire Now
 
                 <span>
+                  Enquire Now
+                </span>
+
+                <span
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover/contact:translate-x-1
+                  "
+                >
                   →
                 </span>
 
@@ -478,7 +632,18 @@ function Gallery() {
               TRUST LINE
           ====================================================== */}
 
-          <div className="mt-8 flex items-center justify-center gap-3">
+          <div
+            className="
+              mt-8
+              flex
+              items-center
+              justify-center
+              gap-3
+              opacity-0
+              animate-[fadeInUp_0.7s_ease-out_1.1s_both]
+              motion-reduce:animate-none
+            "
+          >
 
             <span className="h-px w-8 bg-neutral-200 sm:w-12" />
 
@@ -515,6 +680,106 @@ function Gallery() {
         </div>
 
       </section>
+
+
+      {/* =========================================================
+          ANIMATION KEYFRAMES
+      ========================================================== */}
+
+      <style>{`
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+
+        @keyframes cardReveal {
+          from {
+            opacity: 0;
+            transform: translateY(32px) scale(0.97);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+
+        @keyframes titleReveal {
+          from {
+            opacity: 0;
+            transform: translateY(18px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+
+        @keyframes lineReveal {
+          from {
+            opacity: 0;
+            transform: translateX(-50%) scaleX(0);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
+
+
+        @keyframes galleryGlow {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.6;
+          }
+
+          50% {
+            transform: translate(25px, 20px) scale(1.08);
+            opacity: 1;
+          }
+        }
+
+
+        @keyframes galleryGlowReverse {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.5;
+          }
+
+          50% {
+            transform: translate(-25px, -20px) scale(1.08);
+            opacity: 0.9;
+          }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+
+      `}</style>
 
     </main>
   )

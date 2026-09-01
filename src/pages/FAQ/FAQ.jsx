@@ -67,6 +67,8 @@ function FAQ() {
             rounded-full
             bg-amber-500/10
             blur-3xl
+            animate-[faqGlow_6s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
 
@@ -81,9 +83,10 @@ function FAQ() {
             rounded-full
             bg-amber-500/5
             blur-3xl
+            animate-[faqGlowReverse_7s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
-
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -91,19 +94,21 @@ function FAQ() {
 
             {/* Eyebrow */}
 
-            <div className="mb-5 flex items-center justify-center gap-3">
+            <div
+              className="
+                mb-5
+                flex
+                items-center
+                justify-center
+                gap-3
+                animate-[fadeUp_0.4s_ease-out_both]
+                motion-reduce:animate-none
+              "
+            >
 
               <span className="h-px w-10 bg-amber-500" />
 
-              <span
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[0.22em]
-                  text-amber-400
-                "
-              >
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
                 FAQ
               </span>
 
@@ -122,6 +127,8 @@ function FAQ() {
                 tracking-tight
                 sm:text-4xl
                 lg:text-5xl
+                animate-[fadeUp_0.45s_ease-out_0.05s_both]
+                motion-reduce:animate-none
               "
             >
               Frequently Asked Questions
@@ -143,6 +150,8 @@ function FAQ() {
                 leading-7
                 text-neutral-400
                 sm:text-lg
+                animate-[fadeUp_0.45s_ease-out_0.1s_both]
+                motion-reduce:animate-none
               "
             >
               Find answers to common questions about our charcoal
@@ -171,6 +180,8 @@ function FAQ() {
         "
       >
 
+        {/* Background Accent */}
+
         <div
           className="
             pointer-events-none
@@ -182,26 +193,26 @@ function FAQ() {
             rounded-full
             bg-amber-500/5
             blur-3xl
+            animate-[faqGlow_8s_ease-in-out_infinite]
+            motion-reduce:animate-none
           "
         />
-
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
 
           {/* Section Intro */}
 
-          <div className="mb-10 text-center">
+          <div
+            className="
+              mb-10
+              text-center
+              animate-[fadeUp_0.45s_ease-out_both]
+              motion-reduce:animate-none
+            "
+          >
 
-            <p
-              className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-[0.2em]
-                text-amber-600
-              "
-            >
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
               Help Centre
             </p>
 
@@ -239,14 +250,20 @@ function FAQ() {
                     rounded-2xl
                     border
                     bg-white
+                    opacity-0
+                    animate-[faqCard_0.4s_ease-out_both]
                     transition-all
                     duration-300
+                    motion-reduce:animate-none
                     ${
                       isOpen
                         ? "border-amber-400/60 shadow-lg shadow-neutral-900/5"
-                        : "border-neutral-200 shadow-sm hover:border-neutral-300 hover:shadow-md"
+                        : "border-neutral-200 shadow-sm hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md"
                     }
                   `}
+                  style={{
+                    animationDelay: `${0.12 + index * 0.06}s`,
+                  }}
                 >
 
                   {/* Question Button */}
@@ -289,7 +306,7 @@ function FAQ() {
                           duration-300
                           ${
                             isOpen
-                              ? "bg-amber-500 text-neutral-950"
+                              ? "scale-105 bg-amber-500 text-neutral-950"
                               : "bg-neutral-100 text-neutral-500 group-hover:bg-amber-500/10 group-hover:text-amber-600"
                           }
                         `}
@@ -305,7 +322,7 @@ function FAQ() {
                           text-sm
                           font-bold
                           transition-colors
-                          duration-300
+                          duration-200
                           sm:text-base
                           ${
                             isOpen
@@ -356,7 +373,7 @@ function FAQ() {
                       grid
                       transition-all
                       duration-300
-                      ease-in-out
+                      ease-out
                       ${
                         isOpen
                           ? "grid-rows-[1fr] opacity-100"
@@ -369,15 +386,24 @@ function FAQ() {
 
                       <div className="border-t border-neutral-100 px-5 pb-6 pt-5 sm:px-7">
 
-                        <div className="ml-0 border-l-2 border-amber-500/40 pl-4 sm:ml-[52px]">
+                        <div
+                          className={`
+                            ml-0
+                            border-l-2
+                            border-amber-500/40
+                            pl-4
+                            transition-transform
+                            duration-300
+                            sm:ml-[52px]
+                            ${
+                              isOpen
+                                ? "translate-x-0"
+                                : "-translate-x-2"
+                            }
+                          `}
+                        >
 
-                          <p
-                            className="
-                              text-sm
-                              leading-7
-                              text-neutral-600
-                            "
-                          >
+                          <p className="text-sm leading-7 text-neutral-600">
                             {faq.answer}
                           </p>
 
@@ -412,6 +438,9 @@ function FAQ() {
               text-white
               shadow-xl
               sm:px-8
+              opacity-0
+              animate-[fadeUp_0.45s_ease-out_0.55s_both]
+              motion-reduce:animate-none
             "
           >
 
@@ -446,26 +475,11 @@ function FAQ() {
 
               <div>
 
-                <p
-                  className="
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-[0.18em]
-                    text-amber-400
-                  "
-                >
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-400">
                   Still Have Questions?
                 </p>
 
-                <h3
-                  className="
-                    mt-2
-                    text-lg
-                    font-bold
-                    sm:text-xl
-                  "
-                >
+                <h3 className="mt-2 text-lg font-bold sm:text-xl">
                   We're happy to discuss your requirement.
                 </h3>
 
@@ -480,12 +494,13 @@ function FAQ() {
               <a
                 href="/contact"
                 className="
+                  group/contact
                   inline-flex
                   shrink-0
                   items-center
                   justify-center
                   gap-2
-                  rounded-lg
+                  rounded-xl
                   bg-amber-500
                   px-5
                   py-3
@@ -494,14 +509,24 @@ function FAQ() {
                   text-neutral-950
                   transition-all
                   duration-300
-                  hover:-translate-y-0.5
+                  hover:-translate-y-1
                   hover:bg-amber-400
                   hover:shadow-lg
                   hover:shadow-amber-500/20
                 "
               >
                 Contact Us
-                <span>→</span>
+
+                <span
+                  className="
+                    transition-transform
+                    duration-200
+                    group-hover/contact:translate-x-1
+                  "
+                >
+                  →
+                </span>
+
               </a>
 
             </div>
@@ -513,7 +538,18 @@ function FAQ() {
               TRUST LINE
           ====================================================== */}
 
-          <div className="mt-8 flex items-center justify-center gap-3">
+          <div
+            className="
+              mt-8
+              flex
+              items-center
+              justify-center
+              gap-3
+              opacity-0
+              animate-[fadeUp_0.4s_ease-out_0.65s_both]
+              motion-reduce:animate-none
+            "
+          >
 
             <span className="h-px w-8 bg-neutral-200 sm:w-12" />
 
@@ -550,6 +586,71 @@ function FAQ() {
         </div>
 
       </section>
+
+
+      {/* =========================================================
+          FAST PROFESSIONAL ANIMATIONS
+      ========================================================== */}
+
+      <style>{`
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes faqCard {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes faqGlow {
+          0%,
+          100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(12px, 8px);
+          }
+        }
+
+        @keyframes faqGlowReverse {
+          0%,
+          100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(-12px, -8px);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+
+      `}</style>
 
     </main>
   )

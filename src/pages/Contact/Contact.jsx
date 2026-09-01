@@ -119,6 +119,66 @@ function Contact() {
         <main className="bg-neutral-50">
 
             {/* =========================================================
+                ANIMATION STYLES
+            ========================================================== */}
+
+            <style>{`
+                @keyframes contactFadeUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(14px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes contactFadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes contactScaleIn {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.96);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                .contact-fade-up {
+                    animation: contactFadeUp 0.45s ease-out both;
+                }
+
+                .contact-fade-in {
+                    animation: contactFadeIn 0.5s ease-out both;
+                }
+
+                .contact-scale-in {
+                    animation: contactScaleIn 0.45s ease-out both;
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .contact-fade-up,
+                    .contact-fade-in,
+                    .contact-scale-in {
+                        animation: none;
+                    }
+                }
+            `}</style>
+
+            {/* =========================================================
                 CONTACT HERO
             ========================================================== */}
 
@@ -147,6 +207,7 @@ function Contact() {
                         rounded-full
                         bg-amber-500/10
                         blur-3xl
+                        contact-fade-in
                     "
                 />
 
@@ -161,14 +222,26 @@ function Contact() {
                         rounded-full
                         bg-amber-500/5
                         blur-3xl
+                        contact-fade-in
                     "
+                    style={{ animationDelay: "0.15s" }}
                 />
 
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-                    <div className="mx-auto max-w-3xl text-center">
+                    <div
+                        className="mx-auto max-w-3xl text-center contact-fade-up"
+                    >
 
-                        <div className="mb-5 flex items-center justify-center gap-3">
+                        <div
+                            className="
+                                mb-5
+                                flex
+                                items-center
+                                justify-center
+                                gap-3
+                            "
+                        >
 
                             <span className="h-px w-10 bg-amber-500" />
 
@@ -197,6 +270,7 @@ function Contact() {
                                 sm:text-4xl
                                 lg:text-5xl
                             "
+                            style={{ animationDelay: "0.08s" }}
                         >
                             Let's Discuss Your
 
@@ -214,7 +288,9 @@ function Contact() {
                                 leading-7
                                 text-neutral-400
                                 sm:text-lg
+                                contact-fade-up
                             "
+                            style={{ animationDelay: "0.16s" }}
                         >
                             Contact us for product enquiries, retail requirements,
                             wholesale quantities and commercial requirements.
@@ -223,7 +299,6 @@ function Contact() {
                     </div>
 
                 </div>
-
             </section>
 
 
@@ -281,6 +356,7 @@ function Contact() {
                                 hover:border-amber-400/60
                                 hover:shadow-xl
                                 sm:p-9
+                                contact-fade-up
                             "
                         >
 
@@ -396,7 +472,9 @@ function Contact() {
                                             hover:border-amber-400/60
                                             hover:bg-amber-50
                                             hover:shadow-md
+                                            contact-fade-up
                                         "
+                                        style={{ animationDelay: "0.12s" }}
                                     >
 
                                         <div
@@ -491,7 +569,9 @@ function Contact() {
                                             hover:border-amber-400/60
                                             hover:bg-amber-50
                                             hover:shadow-md
+                                            contact-fade-up
                                         "
+                                        style={{ animationDelay: "0.18s" }}
                                     >
 
                                         <div
@@ -582,7 +662,9 @@ function Contact() {
                                         hover:border-amber-400/60
                                         hover:bg-amber-50
                                         hover:shadow-md
+                                        contact-fade-up
                                     "
+                                    style={{ animationDelay: "0.24s" }}
                                 >
 
                                     <div
@@ -656,7 +738,9 @@ function Contact() {
                                         hover:border-amber-400/60
                                         hover:bg-amber-50
                                         hover:shadow-md
+                                        contact-fade-up
                                     "
+                                    style={{ animationDelay: "0.30s" }}
                                 >
 
                                     <div
@@ -719,6 +803,7 @@ function Contact() {
                             <div
                                 className="
                                     mt-7
+                                    contact-fade-up
                                     [&_a]:transition-all
                                     [&_a]:duration-300
                                     [&_a:hover]:-translate-y-1
@@ -736,6 +821,7 @@ function Contact() {
                                     [&_button:hover]:shadow-lg
                                     [&_button:hover]:shadow-amber-500/20
                                 "
+                                style={{ animationDelay: "0.36s" }}
                             >
                                 <ContactActions />
                             </div>
@@ -762,7 +848,9 @@ function Contact() {
                                 hover:-translate-y-1
                                 hover:shadow-2xl
                                 sm:p-9
+                                contact-fade-up
                             "
+                            style={{ animationDelay: "0.12s" }}
                         >
 
                             {/* Top Accent */}
@@ -843,7 +931,10 @@ function Contact() {
 
                                     {/* Name */}
 
-                                    <div>
+                                    <div
+                                        className="contact-fade-up"
+                                        style={{ animationDelay: "0.22s" }}
+                                    >
 
                                         <label
                                             htmlFor="name"
@@ -892,7 +983,10 @@ function Contact() {
 
                                     {/* Phone */}
 
-                                    <div>
+                                    <div
+                                        className="contact-fade-up"
+                                        style={{ animationDelay: "0.27s" }}
+                                    >
 
                                         <label
                                             htmlFor="phone"
@@ -941,7 +1035,10 @@ function Contact() {
 
                                     {/* Requirement */}
 
-                                    <div>
+                                    <div
+                                        className="contact-fade-up"
+                                        style={{ animationDelay: "0.32s" }}
+                                    >
 
                                         <label
                                             htmlFor="requirement"
@@ -1014,7 +1111,9 @@ function Contact() {
                                             hover:shadow-lg
                                             hover:shadow-amber-500/20
                                             active:translate-y-0
+                                            contact-fade-up
                                         "
+                                        style={{ animationDelay: "0.37s" }}
                                     >
                                         Submit Enquiry
 
@@ -1039,7 +1138,6 @@ function Contact() {
                     </div>
 
                 </div>
-
             </section>
 
 
@@ -1051,7 +1149,18 @@ function Contact() {
 
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-                    <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div
+                        className="
+                            mb-8
+                            flex
+                            flex-col
+                            gap-3
+                            sm:flex-row
+                            sm:items-end
+                            sm:justify-between
+                            contact-fade-up
+                        "
+                    >
 
                         <div>
 
@@ -1148,7 +1257,9 @@ function Contact() {
                             duration-300
                             hover:border-amber-400/50
                             hover:shadow-xl
+                            contact-scale-in
                         "
+                        style={{ animationDelay: "0.1s" }}
                     >
 
                         <iframe
@@ -1188,7 +1299,9 @@ function Contact() {
                             duration-300
                             hover:border-amber-200
                             hover:bg-amber-50
+                            contact-fade-up
                         "
+                        style={{ animationDelay: "0.18s" }}
                     >
 
                         <div
@@ -1255,7 +1368,16 @@ function Contact() {
 
             <section className="bg-neutral-950 py-12 text-white">
 
-                <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+                <div
+                    className="
+                        mx-auto
+                        max-w-4xl
+                        px-4
+                        text-center
+                        sm:px-6
+                        contact-fade-up
+                    "
+                >
 
                     <p
                         className="
