@@ -7,53 +7,62 @@ import FAQSection from "../../components/faq/FAQSection"
 import ContactSection from "../../components/contact/ContactSection"
 import About from "../About/About"
 
-function Home() {
-  const services = [
-    {
-      title: "Retail",
-      description: "Household needs",
-    },
-    {
-      title: "Wholesale",
-      description: "Bulk supply",
-    },
-    {
-      title: "Commercial",
-      description: "Business needs",
-    },
-  ]
+const services = [
+  {
+    title: "Household",
+    description: "Cooking needs",
+  },
+  {
+    title: "Restaurants",
+    description: "Regular supply",
+  },
+  {
+    title: "Tandoor",
+    description: "High-heat use",
+  },
+  {
+    title: "BBQ",
+    description: "Grilling needs",
+  },
+  {
+    title: "Iron Heating",
+    description: "Heating applications",
+  },
+]
 
-  const trustQuotes = [
-    "Quality You Can Trust. Supply You Can Depend On.",
-    "Bulk Supply. Reliable Service. Quality Charcoal.",
-    "Quality Charcoal. Reliable Supply. Every Time.",
-  ]
+const trustPoints = [
+  "15+ Years Experience",
+  "Quality Charcoal",
+  "Retail & Bulk Supply",
+]
+
+function Home() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <main>
-
       {/* =========================================================
           HERO
       ========================================================== */}
-
       <section className="relative overflow-hidden bg-neutral-950 text-white">
-
-        {/* =====================================================
-            BACKGROUND GLOW
-        ====================================================== */}
-
+        {/* Subtle background glow */}
         <div
+          aria-hidden="true"
           className="
             pointer-events-none
             absolute
-            right-0
-            top-0
+            -right-40
+            -top-40
             h-[420px]
             w-[420px]
-            translate-x-1/4
-            -translate-y-1/4
             rounded-full
-            bg-amber-500/10
+            bg-amber-500/[0.06]
             blur-3xl
             animate-[heroGlow_8s_ease-in-out_infinite]
             motion-reduce:animate-none
@@ -61,724 +70,657 @@ function Home() {
         />
 
         <div
+          aria-hidden="true"
           className="
             pointer-events-none
             absolute
-            bottom-0
-            left-0
-            h-[300px]
-            w-[300px]
-            -translate-x-1/3
-            translate-y-1/3
+            -bottom-48
+            -left-40
+            h-[380px]
+            w-[380px]
             rounded-full
-            bg-amber-500/5
+            bg-amber-500/[0.035]
             blur-3xl
-            animate-[heroGlowReverse_10s_ease-in-out_infinite]
+            animate-[heroGlowReverse_9s_ease-in-out_infinite]
             motion-reduce:animate-none
           "
         />
 
-        {/* Small Decorative Line */}
-
         <div
           className="
-            pointer-events-none
-            absolute
-            left-1/2
-            top-0
-            hidden
-            h-px
-            w-32
-            -translate-x-1/2
-            bg-gradient-to-r
-            from-transparent
-            via-amber-500/50
-            to-transparent
-            lg:block
+            relative
+            mx-auto
+            max-w-7xl
+            px-4
+            py-8
+            sm:px-6
+            sm:py-10
+            lg:px-8
+            lg:py-11
+            xl:py-12
           "
-        />
-
-
-        {/* =====================================================
-            HERO CONTAINER
-        ====================================================== */}
-
-        <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-
-          <div className="grid items-start gap-8 lg:grid-cols-[1fr_1fr] lg:gap-12">
-
-
+        >
+          {/* =====================================================
+              MAIN HERO GRID
+              LEFT  = Business information
+              RIGHT = Main business image
+          ====================================================== */}
+          <div
+            className="
+              grid
+              items-start
+              gap-8
+              lg:grid-cols-[1.04fr_0.96fr]
+              lg:gap-10
+              xl:gap-12
+            "
+          >
             {/* =================================================
                 LEFT CONTENT
             ================================================== */}
-
             <div
               className="
-                pt-1
-                animate-[fadeInLeft_0.8s_ease-out]
+                min-w-0
+                animate-[heroLeft_0.7s_ease-out_both]
                 motion-reduce:animate-none
               "
             >
-
-              {/* Badge */}
-
+              {/* Trust badge */}
               <div
                 className="
-                  group
-                  mb-4
+                  mb-5
                   inline-flex
-                  cursor-default
                   items-center
-                  gap-2
+                  gap-3
                   rounded-full
                   border
-                  border-amber-400/30
-                  bg-amber-400/10
+                  border-amber-400/25
+                  bg-amber-400/[0.07]
                   px-4
-                  py-2
+                  py-2.5
+                  text-amber-300
                   transition-all
                   duration-300
-                  hover:border-amber-400/60
-                  hover:bg-amber-400/15
-                  hover:-translate-y-0.5
+                  md:hover:-translate-y-0.5
+                  md:hover:border-amber-400/50
+                  md:hover:bg-amber-400/[0.11]
                 "
               >
-
                 <span
+                  aria-hidden="true"
                   className="
-                    h-2
-                    w-2
+                    h-2.5
+                    w-2.5
+                    shrink-0
                     rounded-full
                     bg-amber-400
-                    transition-all
-                    duration-500
-                    group-hover:scale-125
-                    group-hover:shadow-[0_0_12px_rgba(251,191,36,0.9)]
-                    animate-pulse
-                    motion-reduce:animate-none
+                    shadow-[0_0_12px_rgba(251,191,36,0.65)]
                   "
                 />
 
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">
-                  Wholesale & Retail
-                </span>
-
-              </div>
-
-
-              {/* Business Name */}
-
-              <p
-                className="
-                  text-xs
-                  font-semibold
-                  uppercase
-                  tracking-[0.22em]
-                  text-neutral-500
-                  animate-[fadeInUp_0.7s_ease-out_0.1s_both]
-                  motion-reduce:animate-none
-                "
-              >
-                Sri Venkateswara Charcoal Supply
-              </p>
-
-
-              {/* Main Heading */}
-
-              <h1
-                className="
-                  mt-3
-                  max-w-2xl
-                  text-4xl
-                  font-extrabold
-                  leading-[1.04]
-                  tracking-tight
-                  sm:text-5xl
-                  lg:text-[3.7rem]
-                  xl:text-[4rem]
-                  animate-[fadeInUp_0.8s_ease-out_0.2s_both]
-                  motion-reduce:animate-none
-                "
-              >
-
-                Reliable Charcoal
-
-                <span className="block text-amber-400">
-                  Supply for Every
-                </span>
-
                 <span
                   className="
-                    block
-                    text-amber-400
-                    animate-[textReveal_1s_ease-out_0.4s_both]
-                    motion-reduce:animate-none
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.2em]
+                    sm:text-xs
                   "
                 >
-                  Requirement
+                  Trusted Charcoal Supplier
                 </span>
+              </div>
 
+              {/* Main headline */}
+              <h1
+                className="
+                  animate-[heroHeading_0.75s_ease-out_0.08s_both]
+                  motion-reduce:animate-none
+                  max-w-3xl
+                  text-[3rem]
+                  font-extrabold
+                  leading-[0.98]
+                  tracking-[-0.035em]
+                  text-white
+                  sm:text-5xl
+                  md:text-6xl
+                  lg:text-[3.65rem]
+                  xl:text-[4rem]
+                "
+              >
+                Quality Charcoal.
+                <span className="block text-amber-400">
+                  Reliable Supply.
+                </span>
               </h1>
 
-
               {/* Description */}
-
               <p
                 className="
                   mt-5
-                  max-w-xl
+                  animate-[heroFade_0.65s_ease-out_0.18s_both]
+                  motion-reduce:animate-none
+                  max-w-2xl
                   text-base
                   leading-7
                   text-neutral-300
-                  animate-[fadeInUp_0.8s_ease-out_0.35s_both]
-                  motion-reduce:animate-none
                   sm:text-lg
+                  sm:leading-8
+                  lg:max-w-xl
                 "
               >
-                Quality charcoal solutions for household, commercial,
-                cooking, BBQ and grounding requirements.
+                Quality charcoal solutions for household cooking, restaurants,
+                tandoors, BBQs, iron heating and commercial requirements.
               </p>
 
-
-              {/* =================================================
-                  SERVICE CARDS
-              ================================================== */}
-
-              <div className="mt-6 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
-
-                {services.map((service, index) => (
-
+              {/* Trust points */}
+              <div
+                className="
+                  mt-6
+                  flex
+                  flex-wrap
+                  animate-[heroFade_0.65s_ease-out_0.25s_both]
+                  motion-reduce:animate-none
+                  items-center
+                  gap-x-6
+                  gap-y-3
+                "
+              >
+                {trustPoints.map((point) => (
                   <div
-                    key={service.title}
-                    className="
-                      group
-                      cursor-default
-                      rounded-xl
-                      border
-                      border-neutral-800
-                      bg-neutral-900/70
-                      p-3
-                      opacity-0
-                      transition-all
-                      duration-500
-                      ease-out
-                      hover:-translate-y-2
-                      hover:border-amber-400/50
-                      hover:bg-neutral-900
-                      hover:shadow-xl
-                      hover:shadow-amber-500/10
-                      animate-[fadeInUp_0.6s_ease-out_both]
-                      sm:p-4
-                    "
-                    style={{
-                      animationDelay: `${0.5 + index * 0.12}s`,
-                    }}
+                    key={point}
+                    className="flex items-center gap-2.5"
                   >
-
-                    <div
+                    <span
+                      aria-hidden="true"
                       className="
-                        mb-3
-                        h-1
+                        flex
+                        h-6
                         w-6
+                        shrink-0
+                        items-center
+                        justify-center
                         rounded-full
-                        bg-amber-500/50
-                        transition-all
-                        duration-500
-                        group-hover:w-10
-                        group-hover:bg-amber-400
+                        bg-amber-400/10
+                        text-xs
+                        font-black
+                        text-amber-400
                       "
-                    />
+                    >
+                      ✓
+                    </span>
 
-                    <p className="text-sm font-bold text-white transition-colors duration-300 group-hover:text-amber-300">
-                      {service.title}
-                    </p>
-
-                    <p className="mt-1 text-xs leading-5 text-neutral-500 transition-colors duration-300 group-hover:text-neutral-300">
-                      {service.description}
-                    </p>
-
+                    <span
+                      className="
+                        text-xs
+                        font-semibold
+                        text-neutral-300
+                        sm:text-sm
+                      "
+                    >
+                      {point}
+                    </span>
                   </div>
-
                 ))}
-
               </div>
 
+              {/* =================================================
+                  CTA AREA
+              ================================================== */}
+              <div className="
+                mt-7
+                animate-[heroFade_0.65s_ease-out_0.32s_both]
+                motion-reduce:animate-none
+              ">
+                <ContactActions />
+              </div>
+
+              {/* Service statement */}
+              <div className="
+                mt-6
+                flex
+                items-center
+                gap-3
+                animate-[heroFade_0.65s_ease-out_0.38s_both]
+                motion-reduce:animate-none
+              ">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-9 shrink-0 bg-amber-500"
+                />
+
+                <p
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.2em]
+                    text-neutral-500
+                    sm:text-xs
+                  "
+                >
+                  Retail & Bulk Charcoal Supply
+                </p>
+              </div>
             </div>
 
-
             {/* =================================================
-                RIGHT CONTENT
+                RIGHT IMAGE
+                No floating experience card.
+                No overlay information card.
             ================================================== */}
-
             <div
               className="
                 relative
-                animate-[fadeInRight_0.9s_ease-out_0.15s_both]
+                min-w-0
+                animate-[heroRight_0.8s_ease-out_0.12s_both]
                 motion-reduce:animate-none
               "
             >
-
-              {/* Image Glow */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -inset-4
-                  rounded-[2rem]
-                  bg-amber-500/10
-                  blur-3xl
-                  transition-all
-                  duration-700
-                  animate-[imageGlow_6s_ease-in-out_infinite]
-                  motion-reduce:animate-none
-                "
-              />
-
-
-              {/* Image */}
-
               <div
                 className="
                   group
                   relative
                   overflow-hidden
-                  rounded-[1.5rem]
+                  rounded-[1.75rem]
                   border
                   border-neutral-800
                   bg-neutral-900
-                  shadow-2xl
+                  shadow-[0_25px_80px_rgba(0,0,0,0.35)]
                   transition-all
                   duration-500
-                  hover:border-amber-400/30
-                  hover:shadow-amber-500/10
+                  md:hover:border-amber-400/30
+                  md:hover:shadow-[0_30px_90px_rgba(245,158,11,0.08)]
                 "
               >
-
                 <img
                   src="/images/bbq-charcoal.jpg"
-                  alt="Quality charcoal for BBQ and cooking"
+                  alt="Quality charcoal for cooking, BBQ and commercial requirements"
+                  loading="eager"
+                  decoding="async"
                   className="
-                    h-[270px]
+                    aspect-[1.18/1]
+                    h-auto
                     w-full
                     object-cover
                     transition-transform
-                    duration-1000
+                    duration-700
                     ease-out
-                    group-hover:scale-[1.05]
-                    sm:h-[330px]
-                    lg:h-[360px]
+                    md:group-hover:scale-[1.025]
                   "
                 />
 
-
-                {/* Image Overlay */}
-
+                {/* Very light bottom gradient for depth */}
                 <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-neutral-950
-                    via-neutral-950/10
-                    to-transparent
-                  "
-                />
-
-
-                {/* Animated Image Shine */}
-
-                <div
+                  aria-hidden="true"
                   className="
                     pointer-events-none
                     absolute
-                    inset-y-0
-                    -left-full
-                    w-1/3
-                    skew-x-[-20deg]
-                    bg-gradient-to-r
-                    from-transparent
-                    via-white/10
+                    inset-x-0
+                    bottom-0
+                    h-24
+                    bg-gradient-to-t
+                    from-black/20
                     to-transparent
-                    transition-all
-                    duration-1000
-                    group-hover:left-[120%]
                   "
                 />
-
-
-                {/* Image Information */}
-
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-
-                  <div
-                    className="
-                      rounded-xl
-                      border
-                      border-white/10
-                      bg-neutral-950/85
-                      p-4
-                      shadow-xl
-                      backdrop-blur-md
-                      transition-all
-                      duration-500
-                      group-hover:border-amber-400/20
-                    "
-                  >
-
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300 sm:text-xs">
-                      Sri Venkateswara Charcoal Supply
-                    </p>
-
-                    <p className="mt-1.5 text-sm font-bold text-white sm:text-base">
-                      Cooking • BBQ • Commercial • Grounding
-                    </p>
-
-                  </div>
-
-                </div>
-
               </div>
 
-
               {/* =================================================
-                  CONTACT ACTIONS
+                  BUSINESS HIGHLIGHTS / QUOTES
+                  Positioned directly below the right-side image.
+                  Clean, compact and non-overlapping.
               ================================================== */}
-
               <div
                 className="
                   mt-4
-                  animate-[fadeInUp_0.7s_ease-out_0.7s_both]
+                  grid
+                  grid-cols-1
+                  gap-3
+                  sm:grid-cols-3
+                  lg:grid-cols-1
+                  xl:grid-cols-3
+                  animate-[heroFade_0.65s_ease-out_0.38s_both]
                   motion-reduce:animate-none
                 "
               >
+                
 
                 <div
                   className="
-                    flex
-                    flex-wrap
-                    items-center
-                    gap-3
-
-                    [&_a]:rounded-lg
-                    [&_a]:border
-                    [&_a]:border-neutral-700
-                    [&_a]:bg-neutral-900
-                    [&_a]:px-5
-                    [&_a]:py-3
-                    [&_a]:font-semibold
-                    [&_a]:text-white
-                    [&_a]:transition-all
-                    [&_a]:duration-300
-
-                    [&_a:hover]:-translate-y-1
-                    [&_a:hover]:border-amber-400
-                    [&_a:hover]:bg-amber-400
-                    [&_a:hover]:text-neutral-950
-                    [&_a:hover]:shadow-lg
-                    [&_a:hover]:shadow-amber-500/20
-
-                    [&_button]:rounded-lg
-                    [&_button]:border
-                    [&_button]:border-neutral-700
-                    [&_button]:bg-neutral-900
-                    [&_button]:px-5
-                    [&_button]:py-3
-                    [&_button]:font-semibold
-                    [&_button]:text-white
-                    [&_button]:transition-all
-                    [&_button]:duration-300
-
-                    [&_button:hover]:-translate-y-1
-                    [&_button:hover]:border-amber-400
-                    [&_button:hover]:bg-amber-400
-                    [&_button:hover]:text-neutral-950
-                    [&_button:hover]:shadow-lg
-                    [&_button:hover]:shadow-amber-500/20
+                    group
+                    rounded-xl
+                    border
+                    border-neutral-800
+                    bg-neutral-900/55
+                    px-4
+                    py-3.5
+                    transition-all
+                    duration-300
+                    md:hover:-translate-y-1
+                    md:hover:border-amber-400/30
+                    md:hover:bg-neutral-900
                   "
                 >
-                  <ContactActions />
-                </div>
-
-              </div>
-
-
-              {/* =================================================
-                  PROFESSIONAL TRUST QUOTES
-              ================================================== */}
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-
-                {trustQuotes.map((quote, index) => (
-
-                  <div
-                    key={quote}
-                    className="
-                      group
-                      rounded-xl
-                      border
-                      border-neutral-800
-                      bg-neutral-900/60
-                      p-4
-                      opacity-0
-                      transition-all
-                      duration-500
-                      ease-out
-                      hover:-translate-y-2
-                      hover:border-amber-400/40
-                      hover:bg-neutral-900
-                      hover:shadow-lg
-                      hover:shadow-amber-500/10
-                      animate-[fadeInUp_0.6s_ease-out_both]
-                    "
-                    style={{
-                      animationDelay: `${0.9 + index * 0.12}s`,
-                    }}
-                  >
-
-                    <div
+                  <div className="mb-2 flex items-center gap-2">
+                    <span
+                      aria-hidden="true"
                       className="
-                        mb-3
                         flex
                         h-7
                         w-7
+                        shrink-0
                         items-center
                         justify-center
                         rounded-full
                         bg-amber-400/10
+                        text-sm
                         text-amber-400
-                        transition-all
-                        duration-500
-                        group-hover:rotate-6
-                        group-hover:scale-110
-                        group-hover:bg-amber-400
-                        group-hover:text-neutral-950
                       "
                     >
-                      <span className="text-lg font-bold">
-                        “
-                      </span>
-                    </div>
-
-
-                    <p className="text-xs font-medium leading-5 text-neutral-300 sm:text-sm">
-                      {quote}
+                      “
+                    </span>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                      Reliable Supply
                     </p>
-
                   </div>
+                  <p className="text-xs leading-5 text-neutral-400 sm:text-sm">
+                    Retail and bulk supply with a focus on reliable service and timely requirements.
+                  </p>
+                </div>
 
-                ))}
-
+                <div
+                  className="
+                    group
+                    rounded-xl
+                    border
+                    border-neutral-800
+                    bg-neutral-900/55
+                    px-4
+                    py-3.5
+                    transition-all
+                    duration-300
+                    md:hover:-translate-y-1
+                    md:hover:border-amber-400/30
+                    md:hover:bg-neutral-900
+                  "
+                >
+                  <div className="mb-2 flex items-center gap-2">
+                    <span
+                      aria-hidden="true"
+                      className="
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-amber-400/10
+                        text-sm
+                        text-amber-400
+                      "
+                    >
+                      “
+                    </span>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                      Trusted Service
+                    </p>
+                  </div>
+                  <p className="text-xs leading-5 text-neutral-400 sm:text-sm">
+                    Serving household, restaurants, tandoors, BBQ and iron-heating needs.
+                  </p>
+                </div>
               </div>
+            </div>
+          </div>
 
-
-              {/* Trust Line */}
-
-              <div
+          {/* =====================================================
+              SUITABLE FOR
+              Full width below the main hero.
+          ====================================================== */}
+          <div className="mt-10 border-t border-neutral-800 pt-7 sm:mt-12">
+            {/* Section heading */}
+            <div className="mb-5 flex items-center gap-4">
+              <p
                 className="
-                  mt-5
-                  flex
-                  items-center
-                  gap-3
-                  animate-[fadeInUp_0.7s_ease-out_1.2s_both]
-                  motion-reduce:animate-none
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.24em]
+                  text-neutral-400
+                  sm:text-xs
                 "
               >
+                Suitable For
+              </p>
 
-                <div className="h-px flex-1 bg-neutral-800" />
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                  Trusted Charcoal Supply
-                </p>
-
-                <div className="h-px flex-1 bg-neutral-800" />
-
-              </div>
-
+              <span
+                aria-hidden="true"
+                className="h-px w-10 bg-neutral-800"
+              />
             </div>
 
+            {/* Service cards */}
+            <div
+              className="
+                grid
+                grid-cols-1
+                gap-3
+                sm:grid-cols-2
+                md:grid-cols-3
+                lg:grid-cols-5
+              "
+            >
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="
+                    group
+                    min-h-[108px]
+                    rounded-2xl
+                    border
+                    border-neutral-800
+                    bg-neutral-900/45
+                    px-5
+                    py-5
+                    transition-all
+                    duration-300
+                    md:hover:-translate-y-1
+                    md:hover:border-amber-400/35
+                    md:hover:bg-neutral-900
+                    md:hover:shadow-[0_12px_35px_rgba(245,158,11,0.05)]
+                  "
+                >
+                  <div
+                    aria-hidden="true"
+                    className="
+                      mb-4
+                      h-1
+                      w-8
+                      rounded-full
+                      bg-amber-500/70
+                      transition-all
+                      duration-300
+                      md:group-hover:w-11
+                      md:group-hover:bg-amber-400
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-base
+                      font-bold
+                      text-white
+                      transition-colors
+                      duration-300
+                      md:group-hover:text-amber-300
+                    "
+                  >
+                    {service.title}
+                  </p>
+
+                  <p
+                    className="
+                      mt-1.5
+                      text-xs
+                      leading-5
+                      text-neutral-500
+                      transition-colors
+                      duration-300
+                      md:group-hover:text-neutral-300
+                    "
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-        </div>
-
-
-        {/* Scroll Indicator */}
-
-        <div
-          className="
-            absolute
-            bottom-3
-            left-1/2
-            hidden
-            -translate-x-1/2
-            lg:block
-            motion-reduce:animate-none
-          "
-        >
-          <div className="flex flex-col items-center gap-1 text-neutral-600">
-
-            <span className="text-[8px] font-semibold uppercase tracking-[0.2em]">
-              Explore
-            </span>
-
-            <span className="h-5 w-px bg-gradient-to-b from-amber-500/60 to-transparent animate-pulse motion-reduce:animate-none" />
-
+          {/* =====================================================
+              BOTTOM TRUST STRIP
+              Kept simple and centered to avoid empty/overlapping
+              content on wide screens.
+          ====================================================== */}
+          <div
+            className="
+              mt-7
+              border-t
+              border-neutral-800
+              pt-5
+              text-center
+            "
+          >
+            <p
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+                text-neutral-500
+                sm:text-xs
+                md:text-sm
+                md:tracking-[0.22em]
+              "
+            >
+              Quality Charcoal
+              <span className="mx-2 text-amber-500">•</span>
+              Reliable Supply
+              <span className="mx-2 text-amber-500">•</span>
+              Trusted Service
+            </p>
           </div>
         </div>
-
       </section>
 
-
       {/* =========================================================
-          WHY CHOOSE US
+          OTHER HOME SECTIONS
       ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <WhyChooseUs />
       </div>
 
-
-      {/* =========================================================
-          ABOUT
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <About />
       </div>
 
-
-      {/* =========================================================
-          PRODUCTS
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <ProductsSection />
       </div>
 
-
-      {/* =========================================================
-          WHOLESALE & RETAIL
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <WholesaleSection />
       </div>
 
-
-      {/* =========================================================
-          GALLERY
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <GallerySection />
       </div>
 
-
-      {/* =========================================================
-          FAQ
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <FAQSection />
       </div>
 
-
-      {/* =========================================================
-          CONTACT
-      ========================================================== */}
-
-      <div className="animate-[fadeInUp_0.8s_ease-out] motion-reduce:animate-none">
+      <div className="animate-[sectionReveal_0.65s_ease-out_both] motion-reduce:animate-none">
         <ContactSection />
       </div>
 
-
-      {/* =========================================================
-          ANIMATION KEYFRAMES
-      ========================================================== */}
-
+      {/* Small page-level reveal animation */}
       <style>{`
-        @keyframes fadeInUp {
+        @keyframes heroLeft {
           from {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateX(-24px);
           }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-35px);
-          }
-
           to {
             opacity: 1;
             transform: translateX(0);
           }
         }
 
-        @keyframes fadeInRight {
+        @keyframes heroRight {
           from {
             opacity: 0;
-            transform: translateX(35px);
+            transform: translateX(24px) scale(0.985);
           }
-
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0) scale(1);
           }
         }
 
-        @keyframes textReveal {
+        @keyframes heroHeading {
           from {
             opacity: 0;
-            transform: translateY(12px);
-            letter-spacing: 0.02em;
+            transform: translateY(14px);
           }
-
           to {
             opacity: 1;
             transform: translateY(0);
-            letter-spacing: normal;
+          }
+        }
+
+        @keyframes heroFade {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
 
         @keyframes heroGlow {
-          0%,
-          100% {
-            transform: translate(25%, -25%) scale(1);
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.65;
           }
-
           50% {
-            transform: translate(15%, -15%) scale(1.08);
+            transform: translate(-15px, 15px) scale(1.06);
+            opacity: 0.9;
           }
         }
 
         @keyframes heroGlowReverse {
-          0%,
-          100% {
-            transform: translate(-33%, 33%) scale(1);
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.45;
           }
-
           50% {
-            transform: translate(-20%, 20%) scale(1.08);
+            transform: translate(15px, -15px) scale(1.05);
+            opacity: 0.7;
           }
         }
 
-        @keyframes imageGlow {
-          0%,
-          100% {
-            opacity: 0.7;
-            transform: scale(1);
+        @keyframes sectionReveal {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
           }
-
-          50% {
+          to {
             opacity: 1;
-            transform: scale(1.04);
+            transform: translateY(0);
           }
         }
 
@@ -793,7 +735,6 @@ function Home() {
           }
         }
       `}</style>
-
     </main>
   )
 }
