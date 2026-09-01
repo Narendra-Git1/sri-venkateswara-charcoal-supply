@@ -1,29 +1,126 @@
 const galleryImages = [
+  // =========================================================
+  // PRODUCT IMAGES
+  // =========================================================
+
   {
     id: "iron-charcoal",
     name: "Iron Charcoal",
     category: "Industrial & Commercial",
     image: "/images/iron-charcoal.jpg",
   },
+
   {
     id: "grounding-charcoal",
     name: "Grounding Charcoal",
     category: "Grounding Applications",
     image: "/images/grounding-charcoal.jpg",
   },
+
   {
     id: "tandoor-charcoal",
     name: "Tandoor Charcoal",
     category: "Cooking Applications",
     image: "/images/tandoor-charcoal.jpg",
   },
+
   {
     id: "bbq-charcoal",
     name: "BBQ Charcoal",
     category: "BBQ & Cooking",
     image: "/images/bbq-charcoal.jpg",
   },
+
+
+  // =========================================================
+  // REAL BUSINESS / GALLERY IMAGES
+  // =========================================================
+
+  {
+    id: "charcoal-production",
+    name: "Charcoal Production",
+    category: "Our Supply Process",
+    image: "/images/charcoal-production.jpg",
+  },
+
+  {
+    id: "charcoal-loading",
+    name: "Bulk Charcoal Loading",
+    category: "Bulk Supply",
+    image: "/images/charcoal-loading.jpg",
+  },
+
+  {
+    id: "charcoal-stock-yard",
+    name: "Charcoal Stock Yard",
+    category: "Charcoal Stock",
+    image: "/images/charcoal-stock-yard.jpg",
+  },
+
+  {
+    id: "charcoal-processing",
+    name: "Charcoal Processing",
+    category: "Our Supply Process",
+    image: "/images/charcoal-processing.jpg",
+  },
+
+  {
+    id: "charcoal-bagging",
+    name: "Charcoal Bagging",
+    category: "Packing & Supply",
+    image: "/images/charcoal-bagging.jpg",
+  },
+
+  {
+    id: "charcoal-bbq",
+    name: "Charcoal for BBQ",
+    category: "BBQ & Cooking",
+    image: "/images/charcoal-bbq.jpg",
+  },
+
+  {
+    id: "charcoal-team",
+    name: "Our Team",
+    category: "Our Business",
+    image: "/images/charcoal-team.jpg",
+  },
+
+  {
+    id: "charcoal-business",
+    name: "Our Charcoal Business",
+    category: "Our Business",
+    image: "/images/charcoal-business.jpg",
+  },
+
+  {
+    id: "charcoal-raw-stock",
+    name: "Raw Charcoal Stock",
+    category: "Charcoal Stock",
+    image: "/images/charcoal-raw-stock.jpg",
+  },
+
+  {
+    id: "charcoal-lumps",
+    name: "Charcoal Lumps",
+    category: "Charcoal Stock",
+    image: "/images/charcoal-lumps.jpg",
+  },
+
+  {
+    id: "charcoal-storage",
+    name: "Charcoal Storage",
+    category: "Storage & Supply",
+    image: "/images/charcoal-storage.jpg",
+  },
+
+  {
+    id: "charcoal-bulk-stock",
+    name: "Bulk Charcoal Supply",
+    category: "Wholesale Supply",
+    image: "/images/charcoal-bulk-stock.jpg",
+  },
 ]
+
 
 function Gallery() {
   return (
@@ -103,7 +200,7 @@ function Gallery() {
               mx-auto
               max-w-3xl
               text-center
-              animate-[fadeInUp_0.8s_ease-out]
+              animate-[fadeInUp_0.7s_ease-out]
               motion-reduce:animate-none
             "
           >
@@ -117,14 +214,22 @@ function Gallery() {
                 items-center
                 justify-center
                 gap-3
-                animate-[fadeInUp_0.7s_ease-out_0.1s_both]
+                animate-[fadeInUp_0.6s_ease-out_0.1s_both]
                 motion-reduce:animate-none
               "
             >
 
               <span className="h-px w-10 bg-amber-500" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
+              <span
+                className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-[0.22em]
+                  text-amber-400
+                "
+              >
                 Gallery
               </span>
 
@@ -143,7 +248,7 @@ function Gallery() {
                 tracking-tight
                 sm:text-4xl
                 lg:text-5xl
-                animate-[titleReveal_0.8s_ease-out_0.2s_both]
+                animate-[titleReveal_0.7s_ease-out_0.15s_both]
                 motion-reduce:animate-none
               "
             >
@@ -153,7 +258,7 @@ function Gallery() {
                 className="
                   block
                   text-amber-400
-                  animate-[titleReveal_0.8s_ease-out_0.35s_both]
+                  animate-[titleReveal_0.7s_ease-out_0.3s_both]
                   motion-reduce:animate-none
                 "
               >
@@ -173,12 +278,12 @@ function Gallery() {
                 leading-7
                 text-neutral-400
                 sm:text-lg
-                animate-[fadeInUp_0.8s_ease-out_0.45s_both]
+                animate-[fadeInUp_0.7s_ease-out_0.4s_both]
                 motion-reduce:animate-none
               "
             >
-              Explore our range of charcoal products for cooking,
-              BBQ, commercial and grounding requirements.
+              Explore our charcoal products, stock, supply activities
+              and real business images from our charcoal operations.
             </p>
 
           </div>
@@ -237,7 +342,7 @@ function Gallery() {
               justify-between
               gap-6
               opacity-0
-              animate-[fadeInUp_0.8s_ease-out_0.2s_both]
+              animate-[fadeInUp_0.7s_ease-out_0.1s_both]
               motion-reduce:animate-none
             "
           >
@@ -253,7 +358,7 @@ function Gallery() {
                   text-amber-600
                 "
               >
-                Product Collection
+                Our Gallery
               </p>
 
               <h2
@@ -266,7 +371,7 @@ function Gallery() {
                   sm:text-3xl
                 "
               >
-                Explore Our Range
+                Products & Business
               </h2>
 
             </div>
@@ -276,8 +381,16 @@ function Gallery() {
 
               <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
 
-              <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
-                4 Product Categories
+              <span
+                className="
+                  text-xs
+                  font-semibold
+                  uppercase
+                  tracking-wider
+                  text-neutral-400
+                "
+              >
+                {galleryImages.length} Images
               </span>
 
             </div>
@@ -286,10 +399,17 @@ function Gallery() {
 
 
           {/* =====================================================
-              PRODUCT GALLERY GRID
+              GALLERY GRID
           ====================================================== */}
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className="
+              grid
+              gap-6
+              sm:grid-cols-2
+              lg:grid-cols-4
+            "
+          >
 
             {galleryImages.map((item, index) => (
 
@@ -305,9 +425,9 @@ function Gallery() {
                   bg-white
                   shadow-sm
                   opacity-0
-                  animate-[cardReveal_0.7s_ease-out_both]
+                  animate-[cardReveal_0.55s_ease-out_both]
                   transition-all
-                  duration-500
+                  duration-400
                   hover:-translate-y-2
                   hover:border-amber-400/60
                   hover:shadow-xl
@@ -316,7 +436,7 @@ function Gallery() {
                   motion-reduce:transition-none
                 "
                 style={{
-                  animationDelay: `${0.35 + index * 0.12}s`,
+                  animationDelay: `${0.15 + index * 0.07}s`,
                 }}
               >
 
@@ -337,14 +457,23 @@ function Gallery() {
                 />
 
 
-                {/* Image */}
+                {/* =================================================
+                    IMAGE
+                ================================================== */}
 
-                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+                <div
+                  className="
+                    relative
+                    aspect-[4/5]
+                    overflow-hidden
+                    bg-neutral-100
+                  "
+                >
 
                   <img
                     src={item.image}
                     alt={`${item.name} - ${item.category}`}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading={index < 4 ? "eager" : "lazy"}
                     decoding="async"
                     className="
                       h-full
@@ -368,7 +497,7 @@ function Gallery() {
                       from-neutral-950/85
                       via-neutral-950/10
                       to-transparent
-                      opacity-60
+                      opacity-50
                       transition-opacity
                       duration-500
                       group-hover:opacity-90
@@ -404,7 +533,7 @@ function Gallery() {
                       group-hover:text-neutral-950
                     "
                   >
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
 
@@ -442,7 +571,9 @@ function Gallery() {
                 </div>
 
 
-                {/* Product Information */}
+                {/* =================================================
+                    INFORMATION
+                ================================================== */}
 
                 <div className="relative p-5">
 
@@ -512,118 +643,207 @@ function Gallery() {
 
 
           {/* =====================================================
-              BOTTOM INFORMATION STRIP
+              BUSINESS GALLERY INFORMATION
+          ====================================================== */}
+
+          <div
+            className="
+              mt-12
+              rounded-3xl
+              bg-neutral-950
+              px-6
+              py-10
+              text-center
+              text-white
+              opacity-0
+              animate-[fadeInUp_0.7s_ease-out_1.2s_both]
+              sm:px-10
+              sm:py-12
+              motion-reduce:animate-none
+            "
+          >
+
+            <p
+              className="
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                text-amber-400
+              "
+            >
+              From Our Business
+            </p>
+
+
+            <h2
+              className="
+                mt-3
+                text-2xl
+                font-bold
+                tracking-tight
+                sm:text-3xl
+              "
+            >
+              From Charcoal Stock to Customer Supply
+            </h2>
+
+
+            <p
+              className="
+                mx-auto
+                mt-4
+                max-w-2xl
+                text-sm
+                leading-7
+                text-neutral-400
+                sm:text-base
+              "
+            >
+              These images represent our charcoal stock, handling,
+              packing, bulk supply and day-to-day business activities.
+            </p>
+
+
+            {/* Trust Points */}
+
+            <div
+              className="
+                mx-auto
+                mt-8
+                flex
+                max-w-3xl
+                flex-wrap
+                items-center
+                justify-center
+                gap-3
+              "
+            >
+
+              <span
+                className="
+                  rounded-full
+                  border
+                  border-neutral-700
+                  bg-neutral-900
+                  px-4
+                  py-2
+                  text-xs
+                  font-semibold
+                  text-neutral-300
+                "
+              >
+                Quality Charcoal
+              </span>
+
+              <span
+                className="
+                  rounded-full
+                  border
+                  border-neutral-700
+                  bg-neutral-900
+                  px-4
+                  py-2
+                  text-xs
+                  font-semibold
+                  text-neutral-300
+                "
+              >
+                Bulk Supply
+              </span>
+
+              <span
+                className="
+                  rounded-full
+                  border
+                  border-neutral-700
+                  bg-neutral-900
+                  px-4
+                  py-2
+                  text-xs
+                  font-semibold
+                  text-neutral-300
+                "
+              >
+                Retail Supply
+              </span>
+
+              <span
+                className="
+                  rounded-full
+                  border
+                  border-neutral-700
+                  bg-neutral-900
+                  px-4
+                  py-2
+                  text-xs
+                  font-semibold
+                  text-neutral-300
+                "
+              >
+                Commercial Supply
+              </span>
+
+            </div>
+
+          </div>
+
+
+          {/* =====================================================
+              BOTTOM CTA
           ====================================================== */}
 
           <div
             className="
               mt-10
-              overflow-hidden
-              rounded-2xl
-              border
-              border-neutral-200
-              bg-white
-              shadow-sm
+              flex
+              items-center
+              justify-center
               opacity-0
-              animate-[fadeInUp_0.8s_ease-out_0.9s_both]
-              transition-all
-              duration-500
-              hover:-translate-y-1
-              hover:border-amber-300
-              hover:shadow-lg
+              animate-[fadeInUp_0.7s_ease-out_1.4s_both]
               motion-reduce:animate-none
-              motion-reduce:transition-none
             "
           >
 
-            <div
+            <a
+              href="/contact"
               className="
-                flex
-                flex-col
-                gap-5
-                px-6
-                py-6
-                sm:px-8
-                md:flex-row
-                md:items-center
-                md:justify-between
+                group
+                inline-flex
+                items-center
+                gap-3
+                rounded-xl
+                bg-neutral-950
+                px-7
+                py-3.5
+                text-sm
+                font-bold
+                text-white
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-amber-500
+                hover:text-neutral-950
+                hover:shadow-xl
+                hover:shadow-amber-500/20
               "
             >
 
-              <div className="flex items-start gap-3">
+              <span>
+                Discuss Your Requirement
+              </span>
 
-                <div
-                  className="
-                    mt-1
-                    h-8
-                    w-1
-                    shrink-0
-                    rounded-full
-                    bg-amber-500
-                    transition-all
-                    duration-500
-                  "
-                />
-
-                <div>
-
-                  <h3 className="text-sm font-bold text-neutral-950 sm:text-base">
-                    Looking for a specific charcoal product?
-                  </h3>
-
-                  <p className="mt-1 text-xs leading-5 text-neutral-500 sm:text-sm">
-                    Contact us to discuss product type, quantity
-                    and supply requirements.
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <a
-                href="/contact"
+              <span
                 className="
-                  group/contact
-                  inline-flex
-                  shrink-0
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  bg-neutral-950
-                  px-5
-                  py-3
-                  text-sm
-                  font-bold
-                  text-white
-                  transition-all
+                  transition-transform
                   duration-300
-                  hover:-translate-y-1
-                  hover:bg-amber-500
-                  hover:text-neutral-950
-                  hover:shadow-lg
-                  hover:shadow-amber-500/20
+                  group-hover:translate-x-1
                 "
               >
+                →
+              </span>
 
-                <span>
-                  Enquire Now
-                </span>
-
-                <span
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover/contact:translate-x-1
-                  "
-                >
-                  →
-                </span>
-
-              </a>
-
-            </div>
+            </a>
 
           </div>
 
@@ -640,7 +860,7 @@ function Gallery() {
               justify-center
               gap-3
               opacity-0
-              animate-[fadeInUp_0.7s_ease-out_1.1s_both]
+              animate-[fadeInUp_0.7s_ease-out_1.5s_both]
               motion-reduce:animate-none
             "
           >
@@ -683,7 +903,7 @@ function Gallery() {
 
 
       {/* =========================================================
-          ANIMATION KEYFRAMES
+          ANIMATIONS
       ========================================================== */}
 
       <style>{`
@@ -691,7 +911,7 @@ function Gallery() {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(20px);
           }
 
           to {
@@ -704,7 +924,7 @@ function Gallery() {
         @keyframes cardReveal {
           from {
             opacity: 0;
-            transform: translateY(32px) scale(0.97);
+            transform: translateY(25px) scale(0.98);
           }
 
           to {
@@ -717,7 +937,7 @@ function Gallery() {
         @keyframes titleReveal {
           from {
             opacity: 0;
-            transform: translateY(18px);
+            transform: translateY(15px);
           }
 
           to {
@@ -741,6 +961,7 @@ function Gallery() {
 
 
         @keyframes galleryGlow {
+
           0%,
           100% {
             transform: translate(0, 0) scale(1);
@@ -748,13 +969,14 @@ function Gallery() {
           }
 
           50% {
-            transform: translate(25px, 20px) scale(1.08);
+            transform: translate(20px, 15px) scale(1.08);
             opacity: 1;
           }
         }
 
 
         @keyframes galleryGlowReverse {
+
           0%,
           100% {
             transform: translate(0, 0) scale(1);
@@ -762,13 +984,14 @@ function Gallery() {
           }
 
           50% {
-            transform: translate(-25px, -20px) scale(1.08);
+            transform: translate(-20px, -15px) scale(1.08);
             opacity: 0.9;
           }
         }
 
 
         @media (prefers-reduced-motion: reduce) {
+
           *,
           *::before,
           *::after {
@@ -777,6 +1000,7 @@ function Gallery() {
             transition-duration: 0.01ms !important;
             scroll-behavior: auto !important;
           }
+
         }
 
       `}</style>
